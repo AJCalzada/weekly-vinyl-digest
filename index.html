@@ -155,442 +155,417 @@ const STORE={J:"Juno",R:"Redeye",B:"Bandcamp",H:"Hard Wax",C:"Clone"};
 const GENRE={T:"Techno",M:"Minimal/Tech House",D:"Deep House",H:"House",E:"Electro"};
 const GVAR={T:"--g-techno",M:"--g-minimal",D:"--g-deep",H:"--g-house",E:"--g-electro"};
 // ===== WEEKLY DATA START — the Monday task replaces everything between these markers =====
-const DIGEST={"week": "w/c 26 Oct 2026", "built": "Updated Tue 3 Nov with this week's digest email · refreshes every Monday", "status": [["Juno", 81, true, "81 vinyl records from the 1 Nov 'New vinyl & CD releases' email (Techno, Deep House, Electro tags); 9 already in last digest, CDs and equipment dropped; GBP."], ["Redeye", 264, true, "Techno-electro and house-disco, 5 pages each; 11 already in last digest and edits/disco/off-genre titles left out; ex-VAT GBP."], ["Hard Wax", 18, true, "18 of 24 This Week releases kept; jungle/D&B, dub and ambient left out; EUR, no stock shown."], ["Clone", 11, true, "11 records from the homepage's new block with clone.nl links; restocks and last week's records skipped; no dates or prices."], ["Bandcamp", 60, true, "Newest vinyl views for techno, deep house, electro and minimal via Chrome; audio-preview bundles and non-dance tags left out; no prices."], ["Fingerprints", 0, false, "Nothing in your genres this week — the 10.30.26 Out This Week post is rock, pop, country and reissues."]], "playlists": [["Techno", "T", "https://open.spotify.com/playlist/4dIjuHshd7E7TjPO449eiM"], ["Deep House", "D", "https://open.spotify.com/playlist/7DplSBSaBQDOd4NdR4cud9"], ["House", "H", "https://open.spotify.com/playlist/0mfJ4Me2Bk7MCdVImbYg1K"], ["Electro + Minimal", "E", "https://open.spotify.com/playlist/6O7Do3nQPz7vRvbYRUYUnI"]]};
-const RAW=`J|T|Angelo BASS|Kisses At Midnight|Mondo Groove Italy|12"|£15.75||https://www.juno.co.uk/products/angelo-bass-kisses-at-midnight-vinyl/1180926-01/
-J|T|BLUE HOUR / VARIOUS|Selva Remixes Part 1|Blue Hour|12"|£15.99||https://www.juno.co.uk/products/blue-hour-selva-remixes-part-1-vinyl/1183590-01/
-J|T|BODELER / GREES|22247011|22Recordings|12" repress|£15.99||https://www.juno.co.uk/products/bodeler-grees-22247011-vinyl/1165941-01/
-J|T|CHERRYMOON TRAX / THOMAS SCHUMACHER|The House Of House/When I Rock|Electric Ballroom Germany|12"|£16.75||https://www.juno.co.uk/products/cherrymoon-trax-thomas-the-house-of-house-when-vinyl/1167174-01/
-J|T|CHLAR|Everything Under Control|Primal Instinct Germany|12"|£16.25||https://www.juno.co.uk/products/chlar-everything-under-control-vinyl/1186167-01/
-J|T|CURITY|Spring Inside|Acquit|transparent vinyl 12" limited to 200 copies|£7.25||https://www.juno.co.uk/products/curity-spring-inside-vinyl/1083740-01/
-J|T|Dave CLARKE|Wisdom To The Wise (Joris Voorn remix & original)|Spectrum|translucent red vinyl 12" in die-cut sleeve|£15.99 (also at Redeye)||https://www.juno.co.uk/products/dave-clarke-wisdom-to-the-wise-joris-voorn-vinyl/1184868-01/
-J|T|DEANO|Reasons|Ogazon Netherlands|12"|£15.25||https://www.juno.co.uk/products/deano-reasons-vinyl/1183641-01/
-J|T|DJ NOBU / JAKOJAKO|Wax & Wane|Bitta Japan|12"|£15.25||https://www.juno.co.uk/products/dj-nobu-jakojako-wax-wane-vinyl/1184421-01/
-J|T|DJ TRIKE|Berlin EP|Syncrophone France|yellow vinyl 12"|£16.99 (also at Redeye)||https://www.juno.co.uk/products/dj-trike-berlin-ep-vinyl/1179647-01/
-J|T|Erik LUEBS / SPF 50|Ett Inre Rum|Bliss Point US|12"|£17.25||https://www.juno.co.uk/products/erik-luebs-spf-50-ett-inre-rum-vinyl/1186393-01/
-J|T|G PROD|In Search Of The Roots|Acquit|white vinyl double 12"|£14.25||https://www.juno.co.uk/products/g-prod-in-search-of-the-roots-vinyl/1185925-01/
-J|T|GRAD U|Redscale 03|Redscale Lithuania|red marble vinyl 12" + MP3 download code|£16.75||https://www.juno.co.uk/products/grad-u-redscale-03-vinyl/1179375-01/
-J|T|Johannes VOLK|Shining Force|Running Back Germany|12"|£16.99||https://www.juno.co.uk/products/johannes-volk-shining-force-vinyl/1186534-01/
-J|T|JSPRV35|Twisted EP|Frenzy Music New Zealand|12"|£13.75||https://www.juno.co.uk/products/jsprv35-twisted-ep-vinyl/1182429-01/
-J|T|LONEFRONT|Exegesis III|Uncoiled|12"|£15.25||https://www.juno.co.uk/products/lonefront-exegesis-iii-vinyl/1174680-01/
-J|T|LOUIS THE 4TH|For Those Who Still Believe EP|Kazerne Netherlands|12"|£13.75||https://www.juno.co.uk/products/louis-the-4th-for-those-who-still-believe-vinyl/1180565-01/
-J|T|Mario SEVESO|Co Liseum|Clash Lion|12" zoetrope picture disc|£39.99||https://www.juno.co.uk/products/mario-seveso-co-liseum-vinyl/1188938-01/
-J|T|Maxim VUKOVIC / TILS|MP 11|Magic Power|12"|£16.99||https://www.juno.co.uk/products/maxim-vukovic-tils-mp-11-vinyl/1177223-01/
-J|T|MOSSAFER / SOHRAB|Gorky 8|Kolony Gorky|12"|£12.99||https://www.juno.co.uk/products/mossafer-sohrab-gorky-8-vinyl/1188470-01/
-J|T|Nastia REIGEL|Find Yourself|Blueprint|limited turquoise vinyl 12"|£14.75||https://www.juno.co.uk/products/nastia-reigel-find-yourself-vinyl/1188947-01/
-J|T|NWHR / MIST GASP|Point Of No Return|Loopaina Spain|12"|£16.25||https://www.juno.co.uk/products/nwhr-mist-gasp-point-of-no-return-vinyl/1180578-01/
-J|T|PICTURE|Uuuuuuuu|Short Span|2xLP repress|£35.25||https://www.juno.co.uk/products/picture-uuuuuuuu-vinyl/1165050-01/
-J|T|Ricardo VILLALOBOS|Heike (reissue)|Rawax Germany|translucent purple marbled vinyl 12"|£16.25||https://www.juno.co.uk/products/ricardo-villalobos-heike-vinyl/1188423-01/
-J|T|SALT QUEEN|Are U OK|Samples From Mars|white vinyl 12"|£15.50 (also at Redeye)||https://www.juno.co.uk/products/salt-queen-are-u-ok-vinyl/1186475-01/
-J|T|SPEED / FREQUENCY|Time Will Tell|Forefather Ireland|12"|£13.25||https://www.juno.co.uk/products/speed-frequency-time-will-tell-vinyl/1180581-01/
-J|T|SUB BASICS|Never Too Late|Temple Of Sound|2xLP|£30.99||https://www.juno.co.uk/products/sub-basics-never-too-late-vinyl/1186914-01/
-J|T|The AMAZING|Qu'est Ce Que Vous Voulez? (reissue)|Souvenirs Belgium|12"|£20.50||https://www.juno.co.uk/products/the-amazing-quest-ce-que-vous-voulez-vinyl/1188948-01/
-J|T|The BLACK DOG|Liber Eleven (remastered)|Dust Science|transparent blue vinyl 12"|£28.99||https://www.juno.co.uk/products/the-black-dog-liber-eleven-remastered-vinyl/1183193-01/
-J|T|Toru IKEMOTO|Inori|Ndyuka Rhythms|12"|£16.75||https://www.juno.co.uk/products/toru-ikemoto-inori-vinyl/1179535-01/
-J|T|VARIOUS|Djax Up Beats 1990-2005 Volume 2: The NL Connection|Delsin Netherlands|triple 12" + insert|£37.50 (also at Redeye)||https://www.juno.co.uk/products/djax-up-beats-1990-2005-volume-2-vinyl/1177210-01/
-J|T|VARIOUS|A Portal To The Unknown: 7 Rotations Of Neptune Discs|Neptune Discs Netherlands|2xLP|£31.99||https://www.juno.co.uk/products/a-portal-to-the-unknown-7-rotations-vinyl/1182458-01/
-J|T|VECTOR / aka CARI LEKEBUSCH|Reactivations|Hybrid|12"|£14.50||https://www.juno.co.uk/products/vector-cari-lekebusch-reactivations-vinyl/1189028-01/
-J|T|ZAR / VOID CONTROL|Temporary|Void Control|hand-stamped translucent yellow vinyl 12" limited to 150 copies|£20.75||https://www.juno.co.uk/products/zar-void-control-temporary-vinyl/1185572-01/
-R|T|[g]|Curtain|Dexp||£21.51|Preorder · 30 Nov|https://www.redeyerecords.co.uk/vinyl/202611-dexp001-%5Bg%5D-curtain/
-R|T|Abe Duque & Blake Baxter|What Happened?|Syncrophone||£13.89|Out of stock|https://www.redeyerecords.co.uk/vinyl/173188-syncro50-abe-duque-and-blake-baxter-what-happened?/
-R|T|Adrian Marth|Future Art EP (Incl. Gesloten Cirkel & Alden Tyrell Remixes)|Kri Records||£13.15|Preorder · 2 Dec|https://www.redeyerecords.co.uk/vinyl/202699-kri016-adrian-marth-future-art-ep-incl-gesloten-cirkel-and-alden-tyrell-remixes/
-R|T|AgainstMe|After The Self|Hayes||£12.83|Preorder · 11 Dec|https://www.redeyerecords.co.uk/vinyl/202592-hysep71-againstme-after-the-self/
-R|T|Alich, Lungo, Moulin, Renva, Robbiee, Various Artist|Lost In Tarragona|Gin Sonic Records||£13.67|Preorder · 18 Dec|https://www.redeyerecords.co.uk/vinyl/202647-gsrv003-alich-lungo-moulin-renva-robbiee-various-artist-lost-in-tarragona/
-R|T|Anna Almani|See Me Walk|Shall Not Fade||£12.48|In stock|https://www.redeyerecords.co.uk/vinyl/201861-snf144-anna-almani-see-me-walk/
-R|T|Anne Clark, Jonny Rock|Out Of Synch Virtuality (Feat. Seth Troxler And Baldelli & Dionigi Remixes)|Slacker||£13.06|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/202516-slacker028v-anne-clark-jonny-rock-out-of-synch-virtuality-feat-seth-troxler-and-baldelli-and-dionigi-remixes/
-R|T|Arapu|Acompañado|Rawax||£11.81|Out of stock|https://www.redeyerecords.co.uk/vinyl/134595-rwx016-arapu-acompa%C3%B1ado/
-R|T|Axel Karakasis|Undersense EP|Remain Records||£12.25|Preorder · 6 Nov|https://www.redeyerecords.co.uk/vinyl/200776-remain019-axel-karakasis-undersense-ep/
-R|T|Bella Boo, KURT. & Aasthma|KURT's. Jam|Hessle Audio||£12.48|Preorder · 1 Dec|https://www.redeyerecords.co.uk/vinyl/202667-hes053-bella-boo-kurt-and-aasthma-kurts-jam/
-R|T|Beltrac, Louis Marlo|Freeze Frame|Felt Sense Recordings||£17.30|Preorder · 18 Nov|https://www.redeyerecords.co.uk/vinyl/202511-fltsns018-beltrac-louis-marlo-freeze-frame/
-R|T|Ben Reymann, CRYME|Glitch Gala|Jupiter's Depth||£13.55|Preorder · 26 Nov|https://www.redeyerecords.co.uk/vinyl/202615-jd008-ben-reymann-cryme-glitch-gala/
-R|T|Birdsmakingmachine|BMM012 EP|Birdsmakingmachine||£13.73|Preorder · 1 Dec|https://www.redeyerecords.co.uk/vinyl/202662-bmm012-birdsmakingmachine-bmm012-ep/
-R|T|Birrell|Upside Down|199||£13.17|Preorder · 28 Nov|https://www.redeyerecords.co.uk/vinyl/202559-199-002-birrell-upside-down/
-R|T|Capetini|Sound System|[emotional] Especial||£15.58|Preorder · 29 Nov|https://www.redeyerecords.co.uk/vinyl/202597-ees055-capetini-sound-system/
-R|T|Cassius Select|Dirty Little Secret|Sneaker Social Club||£13.49|Preorder · 27 Nov|https://www.redeyerecords.co.uk/vinyl/202595-snkr070v-cassius-select-dirty-little-secret/
-R|T|Charlotte De Witte|Azadi EP|Kntxt||£14.02|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/202573-kntxt035v-charlotte-de-witte-azadi-ep/
-R|T|Cleric & Aidan Rudd|Clergy Splits [06]|Clergy||£12.37|Preorder · 11 Dec|https://www.redeyerecords.co.uk/vinyl/202589-crg044-cleric-and-aidan-rudd-clergy-splits-%5B06%5D/
-R|T|Cleric & Aidan Rudd|Clergy Splits [06] - Colored Vinyl|Clergy||£13.29|Preorder · 11 Dec|https://www.redeyerecords.co.uk/vinyl/202588-crg044ltd-cleric-and-aidan-rudd-clergy-splits-%5B06%5D-colored-vinyl/
-R|T|Coastal Phase|01|Coastal Phase||£13.87|Preorder · 1 Dec|https://www.redeyerecords.co.uk/vinyl/202665-cp16101-coastal-phase-01/
-R|T|Conrad Van Orton|Know How|Key Vinyl||£11.07|Preorder · 6 Nov|https://www.redeyerecords.co.uk/vinyl/201151-key055-conrad-van-orton-know-how/
-R|T|Crystal Distortion|Better Than Drugs Vol 3|Network23||£10.97|Preorder · 11 Dec|https://www.redeyerecords.co.uk/vinyl/202591-ntw23cd202603-crystal-distortion-better-than-drugs-vol-3/
-R|T|Daniel Neighbour|Phase Space|Pleasure Zone||£12.92|Preorder · 28 Nov|https://www.redeyerecords.co.uk/vinyl/202531-plz014s-daniel-neighbour-phase-space/
-R|T|Dario Zenker|The Stance|Ilian Tape||£11.13|In stock|https://www.redeyerecords.co.uk/vinyl/201327-it080-dario-zenker-the-stance/
-R|T|Darren Allen|Lazarus Ep|Underlying Form||£12.51|In stock|https://www.redeyerecords.co.uk/vinyl/201882-uf011-darren-allen-lazarus-ep/
-R|T|Dave Clarke|Wisdom To The Wise (Joris Voorn Remix)|Spectrum||£13.24|In stock|https://www.redeyerecords.co.uk/vinyl/201796-spctrm100-dave-clarke-wisdom-to-the-wise-joris-voorn-remix/
-R|T|Decoder|IVORY EP|Tb||£13.89|Preorder · 3 Dec|https://www.redeyerecords.co.uk/vinyl/202572-tb001-decoder-ivory-ep/
-R|T|Deetron Presents Soulmate|Tribe One|Ilian Tape||£11.13|In stock|https://www.redeyerecords.co.uk/vinyl/154345-it053-deetron-presents-soulmate-tribe-one/
-R|T|DJ 3000, Robert Hood, Truncate, Gerome Sportelli|Motech 179 EP|Motech||£13.71|Preorder · 28 Nov|https://www.redeyerecords.co.uk/vinyl/202510-mt-179-dj-3000-robert-hood-truncate-gerome-sportelli-motech-179-ep/
-R|T|DJ TRIKE|Berlin EP|Syncrophone||£13.88|Out of stock|https://www.redeyerecords.co.uk/vinyl/200875-syncro75-dj-trike-berlin-ep/
-R|T|Donato Dozzy & Mike Parker|Storm Runners|Sonic Groove||£14.16|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/202594-sg26110-donato-dozzy-and-mike-parker-storm-runners/
-R|T|Droughtwerk|DKW005 / Insane|Dwk||£11.82|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/202557-dwk005-droughtwerk-dkw005-insane/
-R|T|Eric Louis And LIKA|Adventures On 46th Street|Devilish Affair||£11.78|Preorder · 11 Dec|https://www.redeyerecords.co.uk/vinyl/202712-da009-eric-louis-and-lika-adventures-on-46th-street/
-R|T|Existencia Pasajera & Dismal|Ladies Night At The Crop Cricles|Trauma Parlante||£12.25|Preorder · 27 Nov|https://www.redeyerecords.co.uk/vinyl/202501-tp001-existencia-pasajera-and-dismal-ladies-night-at-the-crop-cricles/
-R|T|FARRON|HUMAN LATERNS|Shaw Cuts||£12.50|In stock|https://www.redeyerecords.co.uk/vinyl/196300-sc024-farron-human-laterns/
-R|T|Forest Drive West|Creeper|Ilian Tape||£11.13|In stock|https://www.redeyerecords.co.uk/vinyl/151324-itx025-forest-drive-west-creeper/
-R|T|Forest Drive West|Masking|Ilian Tape||£11.13|In stock|https://www.redeyerecords.co.uk/vinyl/181715-itx037-forest-drive-west-masking/
-R|T|Genex|Synesis EP|Concrete Soul||£12.35|Preorder · 28 Nov|https://www.redeyerecords.co.uk/vinyl/202518-consoul002-genex-synesis-ep/
-R|T|George Apergis|Echoes EP|Modular Expansion Records||£13.88|Preorder · 11 Nov|https://www.redeyerecords.co.uk/vinyl/202512-me015-george-apergis-echoes-ep/
-R|T|Gogo Gadgeto|Looking For The Freaks EP|Lumbago||£14.57|Out of stock|https://www.redeyerecords.co.uk/vinyl/178041-lmbg15-gogo-gadgeto-looking-for-the-freaks-ep/
-R|T|GUY FROM DOWNSTAIRS|LAYERS ONLY|Pleasure Zone||£11.81|In stock|https://www.redeyerecords.co.uk/vinyl/187020-plz047-guy-from-downstairs-layers-only/
-R|T|HAL|Sounds From The Shed VOL.1|La Remise||£14.04|Preorder · 29 Nov|https://www.redeyerecords.co.uk/vinyl/202576-remise001-hal-sounds-from-the-shed-vol-1/
-R|T|Herton|404 Love Not Found EP|Arkham Audio||£11.38|Preorder · 20 Nov|https://www.redeyerecords.co.uk/vinyl/202581-arkio35-herton-404-love-not-found-ep/
-R|T|Hess & Harrison|Rogue Signal|Blackcat Records||£11.82|Preorder · 6 Nov|https://www.redeyerecords.co.uk/vinyl/202551-bc002-hess-and-harrison-rogue-signal/
-R|T|Jack Russell|Taking Flight|Whitewolf Records||£11.82|Preorder · 6 Nov|https://www.redeyerecords.co.uk/vinyl/202552-ww002-jack-russell-taking-flight/
-R|T|Jamie Bissmire|Unable To See The Truth|Calder City Development Corp.||£11.78|Preorder · 18 Dec|https://www.redeyerecords.co.uk/vinyl/202711-ccdc012-jamie-bissmire-unable-to-see-the-truth/
-R|T|Jess Hess|Place Of Peace EP|Deeplabs||£13.71|Preorder · 28 Nov|https://www.redeyerecords.co.uk/vinyl/202513-dl-014-jess-hess-place-of-peace-ep/
-R|T|JJ Beteta|You & A.I.|Error404||£13.15|Preorder · 2 Dec|https://www.redeyerecords.co.uk/vinyl/202702-error404-03-jj-beteta-you-and-a-i/
-R|T|John Beltran|Roots EP|Intrinsic Rhythm||£12.50|In stock|https://www.redeyerecords.co.uk/vinyl/200308-ir-009-john-beltran-roots-ep/
-R|T|Jonathan Fitoussi|Deltas|Obliques||£23.74|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/200594-obl10-jonathan-fitoussi-deltas/
-R|T|JS Zeiter|Accelerate EP|Syncrophone||£13.88|In stock|https://www.redeyerecords.co.uk/vinyl/198240-syncro74-js-zeiter-accelerate-ep/
-R|T|Kike Pravda|Immersion|Infrastructure New York||£26.24|Preorder · 7 Dec|https://www.redeyerecords.co.uk/vinyl/202600-inf029-kike-pravda-immersion/
-R|T|Konduku|Epe / Spiracle|Nous Klaer Audio||£13.85|Preorder · 7 Dec|https://www.redeyerecords.co.uk/vinyl/202530-nous053-konduku-epe-spiracle/
-R|T|Life Recorder|Time Moods 3|Visions Recordings||£12.90|In stock|https://www.redeyerecords.co.uk/vinyl/200660-visio056-life-recorder-time-moods-3/
-R|T|Linja|Plot I|Parking Lotts||£13.15|Preorder · 2 Dec|https://www.redeyerecords.co.uk/vinyl/202700-plot01-linja-plot-i/
-R|T|LIS SARROCA|Rare Ocassion|Rawax||£12.91|In stock|https://www.redeyerecords.co.uk/vinyl/200196-rawax030ltd-lis-sarroca-rare-ocassion/
-R|T|Mark Ambrose|My Soul, Your Soul|Rawax Motor City Edition||£13.19|Out of stock|https://www.redeyerecords.co.uk/vinyl/192736-rmce022-1-mark-ambrose-my-soul-your-soul/
-R|T|Martinou|Rift (3 X LP)|Nous Klaer Audio|3xLP|£25.82|Preorder · 22 Jan|https://www.redeyerecords.co.uk/vinyl/140276-nouslp006-martinou-rift-3-x-lp/
-R|T|Matthew Dexter|Year After Lightyear|Subplanet||£20.90|Preorder · 6 Nov|https://www.redeyerecords.co.uk/vinyl/180284-s-pl02-matthew-dexter-year-after-lightyear/
-R|T|MGUN|House 2 House|Angis Music||£13.66|In stock|https://www.redeyerecords.co.uk/vinyl/201945-angis999-mgun-house-2-house/
-R|T|Mia Koden|Decode Vol.2|Ilian Tape||£11.13|In stock|https://www.redeyerecords.co.uk/vinyl/202074-itx047-mia-koden-decode-vol-2/
-R|T|Mia Mendi|Robosynapse EP (Alan Dixon/H.Bergmann/Musumeci Rmx) (W/ DL Code)|Watergate Records||£12.48|Preorder · 27 Nov|https://www.redeyerecords.co.uk/vinyl/151203-wgvinyl92-mia-mendi-robosynapse-ep-alan-dixon-h-bergmann-musumeci-rmx-w-dl-code/
-R|T|MILLSART|WHATEVER THE CASE|Axis||£13.33|Preorder · 20 Nov|https://www.redeyerecords.co.uk/vinyl/192726-ax128-millsart-whatever-the-case/
-R|T|Moodymann|Moments With Moodymann|Peacefrog||£31.98|Preorder · 29 Nov|https://www.redeyerecords.co.uk/vinyl/202603-pfg212-moodymann-moments-with-moodymann/
-R|T|NEWA|Singularity EP|Fantastic Planet||£14.28|In stock|https://www.redeyerecords.co.uk/vinyl/198197-fan010-newa-singularity-ep/
-R|T|Nico Lampariello|Life Meets Trouble (Incl. Santiago Uribe Remix)|Forma Y Contenido||£12.48|Preorder · 28 Nov|https://www.redeyerecords.co.uk/vinyl/202560-fyc009-nico-lampariello-incl-santiago-uribe-remix-life-meets-trouble/
-R|T|NINA|Internal Makeup|Faux Poly||£12.93|Preorder · 6 Nov|https://www.redeyerecords.co.uk/vinyl/196716-fxply026-nina-internal-makeup/
-R|T|Obergman|Periodic Motion EP|Cyphon Recordings||£13.65|In stock|https://www.redeyerecords.co.uk/vinyl/201078-cyphn23-obergman-periodic-motion-ep/
-R|T|Obscure Shape|CALIBRATED INSTINCT|Bcco||£15.02|Preorder · 6 Nov|https://www.redeyerecords.co.uk/vinyl/202569-bcco006-obscure-shape-calibrated-instinct/
-R|T|Observer|Drums & Chords|Observer||£11.82|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/202554-obs003-observer-drums-and-chords/
-R|T|Orion|The Blood Moon|Pintai||£13.14|Preorder · 27 Nov|https://www.redeyerecords.co.uk/vinyl/202565-pin005-orion-the-blood-moon/
-R|T|Otrera & Yotam Nadav|Not Found 002|Not Found Records||£13.15|Preorder · 2 Dec|https://www.redeyerecords.co.uk/vinyl/202701-ntf002-otrera-and-yotam-nadav-not-found-002/
-R|T|Pascal Hetzel|DBX003|.defaultbox||£12.48|Preorder · 27 Nov|https://www.redeyerecords.co.uk/vinyl/202687-dbx003-pascal-hetzel-dbx003/
-R|T|Phara|Soft Glow, Fierce Light|Fuse Imprint||£11.94|Preorder · 6 Nov|https://www.redeyerecords.co.uk/vinyl/182244-fuse07-phara-soft-glow-fierce-light/
-R|T|Plague Pits|A Structure Of Feeling|Objetrouvé||£14.13|Preorder · 1 Dec|https://www.redeyerecords.co.uk/vinyl/202661-ot-22-plague-pits-a-structure-of-feeling/
-R|T|PLOY|IT'S LATER THAN YOU THINK|Dekmantel|2x12"|£25.44|Preorder · 27 Nov|https://www.redeyerecords.co.uk/vinyl/180788-dkmntl107-ploy-its-later-than-you-think-2x12/
-R|T|POD, Pugilist|Incarnate|Control Freak Recordings||£12.51|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/202509-ctrlfrk010-pod-pugilist-incarnate/
-R|T|PULSINGER & IRL|AALLIIASS I|Big Beak Recordings||£15.94|Out of stock|https://www.redeyerecords.co.uk/vinyl/199410-bb009-pulsinger-and-irl-aalliiass-i/
-R|T|Rambal Cochet|Dreamcast Boy|Exarde||£12.49|Preorder · 30 Nov|https://www.redeyerecords.co.uk/vinyl/202645-xrd045-rambal-cochet-dreamcast-boy/
-R|T|REX PACIFICATOR|REX PACIFICATOR (001)|Rex Pacificator||£11.82|Preorder · 21 Nov|https://www.redeyerecords.co.uk/vinyl/202524-rxp001-rex-pacificator-rex-pacificator-001/
-R|T|Ricardo Villalobos|808 The Bassqueen|Rawax||£13.60|In stock|https://www.redeyerecords.co.uk/vinyl/170894-rv-01-ricardo-villalobos-808-the-bassqueen/
-R|T|Ricardo Villalobos|Salvador (Part 1 Of 3)|Rawax||£13.19|In stock|https://www.redeyerecords.co.uk/vinyl/183915-rv-05-ricardo-villalobos-salvador-part-1-of-3/
-R|T|RICARDO VILLALOBOS|WINGS|Rawax||£13.19|In stock|https://www.redeyerecords.co.uk/vinyl/198494-rv-09-ricardo-villalobos-wings/
-R|T|Richkus|InDepth-Section EP (David Heine & Konstantin Kost Remix)|Myrmidon_audio||£15.11|Preorder · 18 Dec|https://www.redeyerecords.co.uk/vinyl/202657-myr-vnyl01-richkus-indepth-section-ep-david-heine-and-konstantin-kost-remix/
-R|T|Rio Kawamoto|Tamiya Boy EP (DJ Tjizza Remix)|More Rice||£14.04|Preorder · 29 Nov|https://www.redeyerecords.co.uk/vinyl/202578-more-rice-rio-kawamoto-tamiya-boy-ep-dj-tjizza-remix/
-R|T|Rustal|The Path|Blackcat Records||£20.07|Preorder · 6 Nov|https://www.redeyerecords.co.uk/vinyl/202555-bc003-rustal-the-path/
-R|T|Salt Queen|ARE U OK|Samples From Mars||£12.87|Preorder · 6 Nov|https://www.redeyerecords.co.uk/vinyl/202026-sfm002w-salt-queen-are-u-ok/
-R|T|SAMA|Moving Pressure 08|Moving Pressure||£12.37|Preorder · 11 Dec|https://www.redeyerecords.co.uk/vinyl/202587-mp08-sama-moving-pressure-08-sama/
-R|T|Sancra|Echoes Of The Infinitive|Undersound Recordings||£12.49|Preorder · 6 Nov|https://www.redeyerecords.co.uk/vinyl/181505-usr033-sancra-echoes-of-the-infinitive/
-R|T|Satoshi Tomiie, Tomoki Tamura|Unfinished|Abstract Architecture / Holc Trax||£14.27|Preorder · 1 Dec|https://www.redeyerecords.co.uk/vinyl/202664-tomtom003-satoshi-tomiie-tomoki-tamura-unfinished/
-R|T|Scan 7|Resurfaced (2026 Reissue)|Tresor|2x12"|£12.89|Preorder · 6 Nov|https://www.redeyerecords.co.uk/vinyl/192273-tresor121x-scan-7-resurfaced-2026-reissue-2x12/
-R|T|Seba & Paradox|Volt|Ilian Tape||£10.44|In stock|https://www.redeyerecords.co.uk/vinyl/167024-it058-seba-and-paradox-volt/
-R|T|Sebastian Mullaert|When The Night Kissed We Winnowed Away|Wa Wu We Patterns||£15.93|Preorder · 29 Nov|https://www.redeyerecords.co.uk/vinyl/202598-wp1-sebastian-mullaert-when-the-night-kissed-we-winnowed-away/
-R|T|Shed|Applications|Ilian Tape||£11.13|Out of stock|https://www.redeyerecords.co.uk/vinyl/178119-it067-shed-applications/
-R|T|Sir E.U, Sami|I Will Never Let You Go Mixes|New Day||£12.52|Preorder · 16 Nov|https://www.redeyerecords.co.uk/vinyl/202571-nd002-sir-e-u-sami-i-will-never-let-you-go-mixes/
-R|T|Skee Mask|2012|Ilian Skee Series||£11.13|In stock|https://www.redeyerecords.co.uk/vinyl/83331-iss001-skee-mask-2012/
-R|T|Skee Mask|Compro|Ilian Tape||£23.49|Out of stock|https://www.redeyerecords.co.uk/vinyl/96537-itlp04-skee-mask-compro/
-R|T|Skee Mask|ISS009|Ilian Skee Series||£11.13|In stock|https://www.redeyerecords.co.uk/vinyl/159673-iss009-skee-mask-iss009/
-R|T|Skee Mask|Pool|Ilian Tape||£33.80|In stock|https://www.redeyerecords.co.uk/vinyl/135661-itlp09-skee-mask-pool/
-R|T|SND & RTN|ECHO LTD 013 EP [180 Grams / Colored Vinyl]|Echo Ltd||£13.27|Preorder · 6 Nov|https://www.redeyerecords.co.uk/vinyl/184560-echoltd013-snd-and-rtn-echo-ltd-013-ep-%5B180-grams-colored-vinyl%5D/
-R|T|Sonuga|Airing EP|Blackcat Records||£11.82|Preorder · 28 Nov|https://www.redeyerecords.co.uk/vinyl/202558-bc001-sonuga-airing-ep/
-R|T|Stefan Goldmann|Atelier (LP)|Macro Recordings|LP|£14.54|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/202682-macrom86-stefan-goldmann-atelier-lp/
-R|T|STL|Sign Of Life EP|Ascending Signs Records||£12.15|In stock|https://www.redeyerecords.co.uk/vinyl/201947-as003-stl-sign-of-life-ep/
-R|T|Sugar|Phonomaton|Limited Network||£13.71|Preorder · 28 Nov|https://www.redeyerecords.co.uk/vinyl/202528-ln-017-sugar-phonomaton/
-R|T|The Diyeis|Tempo|This Is The Way||£13.00|Preorder · 17 Dec|https://www.redeyerecords.co.uk/vinyl/202580-titw002-the-diyeis-tempo/
-R|T|The Ephedrines|Free|Ephedrines Records||£11.70|Preorder · 10 Dec|https://www.redeyerecords.co.uk/vinyl/202567-eph001-the-ephedrines-free/
-R|T|The Guardians Of Neko|Echoes Beyond Silence EP|Under.time||£12.48|Preorder · 6 Nov|https://www.redeyerecords.co.uk/vinyl/192334-under-time01-the-guardians-of-neko-echoes-beyond-silence-ep/
-R|T|The Optic Crux / Random XS|Djax-Up-Beats 1990-2005: The Acid Trip EP 3|Delsin||£12.49|Preorder · 29 Nov|https://www.redeyerecords.co.uk/vinyl/202582-dsr-djax-ep3-the-optic-crux-random-xs-djax-up-beats-1990-2005-the-acid-trip-ep-3/
-R|T|Tinkertoy|Dubplate #15 : Editing Our Connection|Mysticisms||£15.58|Preorder · 30 Nov|https://www.redeyerecords.co.uk/vinyl/202646-myd015-tinkertoy-dubplate-15-editing-our-connection/
-R|T|Toru Katsuta|Securing The Trajectory|Modwerks||£11.96|Preorder · 11 Dec|https://www.redeyerecords.co.uk/vinyl/202474-mdwxlp017-toru-katsuta-securing-the-trajectory/
-R|T|Trackmaster Dre|Basement Slugz Pt. 1|Dance Mafia||£13.88|Preorder · 20 Nov|https://www.redeyerecords.co.uk/vinyl/202605-dancemafia05-trackmaster-dre-basement-slugz-pt-1/
-R|T|Trajano|Fórmulas EP|Laboratoire Obsolète||£15.23|Out of stock|https://www.redeyerecords.co.uk/vinyl/181961-lbs-1-trajano-f%C3%B3rmulas-ep/
-R|T|TV HILL|Dimneonsum + OGAG - ATR!P|Tv Hill Records||£12.46|Preorder · 14 Dec|https://www.redeyerecords.co.uk/vinyl/202715-tvh022-tv-hill-dimneonsum-ogag-atr!p/
-R|T|Twovi & Intheismah|Return To The Source|Satelliet Studio Recordings||£14.49|Preorder · 28 Nov|https://www.redeyerecords.co.uk/vinyl/202539-sat004-twovi-and-intheismah-return-to-the-source/
-R|T|Various|La Fontaine Records VA Part 2|La Fontaine Records||£15.14|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/202654-lfr002-various-la-fontaine-records-va-part-2/
-R|T|Various Artists|VA Essential Memories EP Part VII|Emerald||£20.44|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/202248-emerald035-various-artists-va-essential-memories-ep-part-vii/
-R|T|Various Artists|Djax-Up-Beats 1990-2005: Volume 2 - The NL Connection|Delsin|3x12"|£31.05|Preorder · 6 Nov|https://www.redeyerecords.co.uk/vinyl/200399-dsr-djax-lp2-various-artists-djax-up-beats-1990-2005-volume-2-the-nl-connection-3x12/
-R|T|Various Artists|Downtown Dubs 2|Patent||£12.49|Preorder · 6 Nov|https://www.redeyerecords.co.uk/vinyl/199998-patent004-various-artists-downtown-dubs-2/
-R|T|Various Artists|Various Artists|Hereandthere||£13.60|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/200542-hnt004-various-artists-various-artists/
-R|T|Various Artists|5 Deadly Venoms: Scorpion|Shaw Cuts||£12.50|In stock|https://www.redeyerecords.co.uk/vinyl/191649-sc023-5-deadly-venoms-scorpion-various-artists/
-R|T|Various Artists|Carnal Savana Vol. 1|Solar Operandi||£13.64|Preorder · 6 Nov|https://www.redeyerecords.co.uk/vinyl/193218-sop001-carnal-savana-vol-1-va/
-R|T|Various Artists|Massage Brain Cult EP - MBC004|Massage Brain Cult||£13.87|Out of stock|https://www.redeyerecords.co.uk/vinyl/193308-mbc004-massage-brain-cult-ep-mbc004-va/
-R|T|Various Artists|25 Years Mainrecords|Mainrecords||£12.50|In stock|https://www.redeyerecords.co.uk/vinyl/200012-mainrecords13-various-artists-25-years-mainrecords/
-R|T|Various Artists|Djax-Up-Beats 1990-2005: The NL Connection EP 1|Delsin||£12.49|Preorder · 23 Nov|https://www.redeyerecords.co.uk/vinyl/202585-dsr-djax-ep4-various-artists-djax-up-beats-1990-2005-the-nl-connection-ep-1/
-R|T|Various Artists|Djax-Up-Beats 1990-2005: The NL Connection EP 2|Delsin||£12.49|Preorder · 23 Nov|https://www.redeyerecords.co.uk/vinyl/202584-dsr-djax-ep5-various-artists-djax-up-beats-1990-2005-the-nl-connection-ep-2/
-R|T|Various Artists|Djax-Up-Beats 1990-2005: The NL Connection EP 3|Delsin||£12.49|Preorder · 14 Dec|https://www.redeyerecords.co.uk/vinyl/202583-dsr-djax-ep6-various-artists-djax-up-beats-1990-2005-the-nl-connection-ep-3/
-R|T|Various Artists|Dub Meets Techno V.2|Moonshine Recordings||£21.24|Out of stock|https://www.redeyerecords.co.uk/vinyl/202052-mslp022ltd-various-artists-dub-meets-techno-v-2/
-R|T|Various Artists|SMOKE_TEST|Purr||£12.37|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/202614-purr04-various-artists-smoke_test/
-R|T|Various Artists|VA JUUZ006|Juuz Records||£16.64|Preorder · 11 Dec|https://www.redeyerecords.co.uk/vinyl/202601-juuz006-various-artists-va-juuz006/
-R|T|Various Artists|La Fontaine Records EP|La Fontaine Records||£12.90|Preorder · 6 Nov|https://www.redeyerecords.co.uk/vinyl/181059-lfr001-la-fontaine-records-ep-va/
-R|T|Viikatory|Virtual Oomms EP|Fantastic Planet||£13.61|Preorder · 29 Nov|https://www.redeyerecords.co.uk/vinyl/202609-fan011-viikatory-virtual-oomms-ep/
-R|T|VLAD ARAPASU|CLOSED CIRCUIT DREAMS|Rawax||£12.50|Out of stock|https://www.redeyerecords.co.uk/vinyl/198682-rwx030-vlad-arapasu-closed-circuit-dreams/
-R|T|Voodoo Transmission|Voodoo Fire|Sound Metaphors Records||£14.98|Preorder · 27 Nov|https://www.redeyerecords.co.uk/vinyl/172022-smr023-voodoo-transmission-voodoo-fire/
-R|T|Warzabart & Bane9|Riddim De Mareuil|Teenage Menopause Records||£23.39|Preorder · 11 Dec|https://www.redeyerecords.co.uk/vinyl/202656-tmr057-warzabart-and-bane9-riddim-de-mareuil/
-R|T|Z-ID|DDDREAMS EP|Home Kitchen Records||£13.15|Preorder · 2 Dec|https://www.redeyerecords.co.uk/vinyl/202703-hkr002-z-id-dddreams-ep/
-H|T|Alexander Kowalski|No Exits EP|Frameworks FW08|12"|€15||https://hardwax.com/08407/alexander-kowalski/no-exits-ep/
-H|T|Chlär & Primal Instinct Records|Everything Under Control|Primal Instinct PI14|12"|€16.50||https://hardwax.com/07944/chlar-and-primal-instinct-records/everything-under-control/
-H|T|DJ Hendy|The Funk|Kaos DS06|12"|€16||https://hardwax.com/89676/dj-hendy/the-funk/
-H|T|Essentia|He Who Sees EP|Arts W 013|12"|€15||https://hardwax.com/07965/essentia/he-who-sees-ep/
-H|T|Greyn & Tièmoko Koné|Common Ground EP|Planet Rhythm UK BLK 164|12"|€14.50||https://hardwax.com/08196/greyn-and-tiemoko-kone/common-ground-ep/
-H|T|Heritage|The Shadow Boxer|Shaw Cuts SC025|12"|€14.50||https://hardwax.com/88713/heritage/the-shadow-boxer/
-H|T|JSPRV35|Twisted EP|Frenzy FRNZYREC013|12"|€15||https://hardwax.com/07733/jsprv35/twisted-ep/
-H|T|Louis The 4th|For Those Who Still Believe EP|Mord Kazerne KAZERNE030|12"|€15||https://hardwax.com/89652/louis-the-4th/for-those-who-still-believe-ep/
-H|T|NVST|Godspeed|Tresor Tresor389|12"|€15.50||https://hardwax.com/40295/nvst/godspeed/
-H|T|Nwhr & Mist Gasp|Point Of No Return|Loopaina LPR-V007|12"|€17.50||https://hardwax.com/89677/nwhr-and-mist-gasp/point-of-no-return/
-H|T|Rosati|Chasing The Sun|Dolly TS 018|12"|€17||https://hardwax.com/89626/rosati/chasing-the-sun/
-H|T|Sera J|Beneath a Quiet Sky|Blind Harmonies BLND003|12"|€17.50||https://hardwax.com/07892/sera-j/beneath-a-quiet-sky/
-H|T|Speed x Frequency|Time Will Tell|Forefather FF01|12"|€14||https://hardwax.com/89675/speed-x-frequency/time-will-tell/
-H|T|Steffi|Half An Owl And A Full Moon Rising|Dekmantel DKMNTL126|Do LP|€35||https://hardwax.com/31869/steffi/half-an-owl-and-a-full-moon-rising/
-H|T|Tarkno, Remco Beekwilder & Jacobworld|Triple Threat EP|Emerald EMERALD034|12"|€16||https://hardwax.com/32629/tarkno-remco-beekwilder-and-jacobworld/triple-threat-ep/
-H|T|Tensal|Huge Rings of Hot Plasma|Domu 006|12"|€16||https://hardwax.com/89645/tensal/huge-rings-of-hot-plasma/
-H|T|The Experience|Tubes|Back To Life 024|12"|€16.50||https://hardwax.com/89532/the-experience/tubes/
-C|T|Deano|Reasons|Ogazon (OGZ001)|12"|||https://clone.nl/item85074.html
-C|T|Maxim Vukovic / Tils|MP11|Magic Power (MP11)|12"|||https://clone.nl/item84587.html
-C|T|Synaptic Voyager|Spiritual Reflection EP|Seventh Sign Recordings (7SR039)|12"|||https://clone.nl/item85002.html
-C|T|Tom Carruthers|Release It|Rotterdam Electronix (RET019)|12"|||https://clone.nl/item84483.html
-C|T|Toru Ikemoto|Inori|NDYUKA RHYTHMS (NDR02)|EP|||https://clone.nl/item84738.html
-C|T|Various Artists|Djax-Up-Beats 1990-2005: Volume 2 - The NL Connection|Delsin (DSR-DJAX-LP2)|3x12"|||https://clone.nl/item84626.html
-C|T|Various Artists|Safe Anniversary 2|SANNI (SANNI2)|12"|||https://clone.nl/item85104.html
-B|T|amotik|Amotik 017||Vinyl|||https://amotik.bandcamp.com/album/amotik-017
-B|T|DJ Hell|RX-04LP||Vinyl|||https://dbh-music.bandcamp.com/album/rx-04lp
-B|T|DJ SPELL|Proof Of Life||Vinyl|||https://mindseyerecords.xyz/album/proof-of-life-2
-B|T|Ed Davenport|Archiv: 06-26||Vinyl|||https://eddavenport.bandcamp.com/album/archiv-06-26
-B|T|GRAYSSOKER|FULL MOON PARTY||Vinyl|||https://grayssoker.bandcamp.com/album/full-moon-party
-B|T|Harpie|Mirage||Vinyl|||https://harpiemusic.bandcamp.com/album/mirage
-B|T|Miz.Oxid, NkS, AxellBud feat Mystical High diois, MoleculeProd|FLF008||Vinyl|||https://flfsoundsystem.bandcamp.com/album/flf008-2
-B|T|Munir Nadir|The Sleep Of Reason EP||Vinyl|||https://memoriarecords.bandcamp.com/album/munir-nadir-the-sleep-of-reason-ep-vinyl-only
-B|T|Nocturbulous Records|To My Brother||Vinyl|||https://nocturbulousrecords.bandcamp.com/album/to-my-brother
-B|T|Perfo|One Brother Is Enough||Vinyl|||https://perfo-music.bandcamp.com/album/one-brother-is-enough
-B|T|Radial|A Cloudless Sky||Vinyl|||https://fusionofthought.bandcamp.com/album/radial-a-cloudless-sky
-B|T|Shine Grooves|Pyshma||Vinyl|||https://gostzvuk.bandcamp.com/album/pyshma
-B|T|Sindaco|Sindaken Street Gang||Vinyl|||https://wavemakers.bandcamp.com/album/sindaken-street-gang
-B|T|Spacetime Continuum with Terence McKenna|Soliton||Vinyl|||https://spacetimecontinuum.bandcamp.com/album/soliton
-B|T|Sven Väth, Roman Flügel|Rings of Light||Vinyl|||https://timewarpofficial.bandcamp.com/album/rings-of-light
-B|T|Unerwartet|Endless EP||Vinyl|||https://slabltd.bandcamp.com/album/endless-ep
-B|T|Unknown|Elements||Vinyl|||https://wavemakers.bandcamp.com/album/elements
-B|T|Viels|Audio Catalogue 002 (Particle Audio)||Vinyl|||https://viels.bandcamp.com/album/viels-audio-catalogue-002-particle-audio
-C|M|Ian Pooley|You Know|Pooled Music (PLD048)|EP|||https://clone.nl/item84396.html
-B|M|Bart Ender, Easy Audio, Fideshi|Home Selectors EP||Vinyl|||https://monkeyloveselection.bandcamp.com/album/home-selectors-ep
-B|M|Dapayk Solo|Tracks I Made On The Syntakt While My Wife Was Getting Ready (RRYTUS17)||Vinyl|||https://dapayk.bandcamp.com/album/rrytus17-dapayk-solo-tracks-i-made-on-the-syntakt-while-my-wife-was-getting-ready-album
-B|M|Darren Allen|LAZARUS EP||Vinyl|||https://underlyingform.bandcamp.com/album/lazarus-ep
-B|M|Desolë Recordings|Skyscraper Tonic EP||Vinyl|||https://desolrecordings.bandcamp.com/album/skyscraper-tonic-ep
-B|M|DYL, Saša Delimar|CONDUIT: PERSPECTIVES||Vinyl|||https://delimar.bandcamp.com/album/conduit-perspectives
-B|M|JJ Beteta|You & A.I. EP [ERROR404-03]||Vinyl|||https://err0r404rec.bandcamp.com/album/error404-03-jj-beteta-you-a-i-ep
-B|M|Masupilami|Nothing Is Really Artificial EP||Vinyl|||https://memoriarecords.bandcamp.com/album/masupilami-nothing-is-really-artificial-ep-vinyl-only
-B|M|Mourne, M-Zine|Ledger||Vinyl|||https://subspacebirmingham.bandcamp.com/album/ledger-by-m-zine
-B|M|optyi|absorb/amplify||Vinyl|||https://optyi.bandcamp.com/album/absorb-amplify
-B|M|stbr & Davy|RM12048||Vinyl|||https://randmuzikrecordings.bandcamp.com/album/rm12048
-B|M|Tripmastaz|Fly Intergalactic Gangsta Schitt||Vinyl|||https://tripmastaz.bandcamp.com/album/fly-intergalactic-gangsta-schitt
-J|D|Alexander MATCHAK / ANDRE KRONERT / MIHAI POPOVICIU / PORNBUGS & FRINK|Bondage Games Part 11: Aries|Bondage Germany|12"|£14.75||https://www.juno.co.uk/products/alexander-matchak-andre-bondage-games-part-11-aries-vinyl/1185760-01/
-J|D|Andrea NATALI / FUNKSONIK / DIEGO ADELANTE|Berlin Pisa|Cabinet Germany|12"|£16.75||https://www.juno.co.uk/products/andrea-natali-funksonik-diego-adelante-berlin-pisa-vinyl/1181408-01/
-J|D|Andy KAS|Not So Disco|Sex Tapes From Mars|12"|£14.50||https://www.juno.co.uk/products/andy-kas-not-so-disco-vinyl/1173620-01/
-J|D|Ari BALD / CJ SCOTT|Colombiance|Studio Barnhus Sweden|12"|£18.75||https://www.juno.co.uk/products/ari-bald-cj-scott-colombiance-vinyl/1185742-01/
-J|D|BRESS UNDERGROUND|Pastasoul 01|Pastasoul Netherlands|12"|£15.25||https://www.juno.co.uk/products/bress-underground-pastasoul-01-vinyl/1164930-01/
-J|D|Chris FRY / HARVEY LOWE / KID MARK / CLAUDIO|Various People Vol 5|Plastik People|12"|£12.99||https://www.juno.co.uk/products/chris-fry-harvey-lowe-various-people-vol-5-vinyl/1153422-01/
-J|D|DAN PIU|Technological Singularity|Hizou Deep Rooted Music|12" repress|£9.25||https://www.juno.co.uk/products/dan-piu-technological-singularity-vinyl/760910-01/
-J|D|DANIEL / RICARDO ANGELES|Diving Under The Grass|Peaces Germany|white vinyl 12"|£16.50||https://www.juno.co.uk/products/daniel-ricardo-angeles-diving-under-the-grass-vinyl/1162312-01/
-J|D|DEGO|Power|2000 Black|12"|£12.75||https://www.juno.co.uk/products/dego-power-vinyl/1186649-01/
-J|D|DJ AAKMAEL|Off Grid|Unxpozd Entertainment|12"|£12.99||https://www.juno.co.uk/products/dj-aakmael-off-grid-vinyl/1188964-01/
-J|D|DREAMHOUSE / feat CEASAR|Jump & Prance (reissue)|Cabaret US|12"|£14.99||https://www.juno.co.uk/products/dreamhouse-ceasar-jump-prance-vinyl/1185455-01/
-J|D|ELEMENTS OF LIFE / feat LISA FISCHER|Soar|Vega US|12"|£16.50||https://www.juno.co.uk/products/elements-of-life-lisa-fischer-soar-vinyl/1182581-01/
-J|D|Emanuele CISI|Pharoah's Message Phase II|Right Tempo Italy|12"|£22.25||https://www.juno.co.uk/products/emanuele-cisi-pharoahs-message-phase-ii-vinyl/1179523-01/
-J|D|FORT ROMEAU|Sunlight EP|Rawax Germany|12"|£13.99 (also at Redeye)||https://www.juno.co.uk/products/fort-romeau-sunlight-ep-vinyl/1160075-01/
-J|D|Frank MAUREL|Hypnotized EP|I've Seen The Future Portugal|12"|£16.25||https://www.juno.co.uk/products/frank-maurel-hypnotized-ep-vinyl/1174078-01/
-J|D|FRED EVERYTHING|The Lost Tapes 2008-2015|Daybreakers|12"|£14.99||https://www.juno.co.uk/products/fred-everything-the-lost-tapes-2008-2015-vinyl/1178893-01/
-J|D|Glenn DAVIS / TRINIDADIAN DEEP|Mixed Emotions|Forma Music Ireland|12"|£15.50||https://www.juno.co.uk/products/glenn-davis-trinidadian-deep-mixed-emotions-vinyl/1186479-01/
-J|D|GLENN UNDERGROUND / ANTHONY NICHOLSON / VICK LAVENDER / DEJAY CEASE|Bridgeport Records Sessions Vol 1|Bridgeport US|180 gram vinyl 12"|£36.75||https://www.juno.co.uk/products/glenn-underground-anthony-bridgeport-records-sessions-vol-1-vinyl/1159767-01/
-J|D|Ian POOLEY|You Know|Pooled Music Germany|12"|£15.50||https://www.juno.co.uk/products/ian-pooley-you-know-vinyl/1172455-01/
-J|D|J BOSSA / LOV|Sway|Shanti Mansion|12"|£15.99||https://www.juno.co.uk/products/j-bossa-lov-sway-vinyl/1189679-01/
-J|D|Jasper JAMES|Wax Trax Vol 1|Chiwax Germany|12"|£14.50 (also at Redeye)||https://www.juno.co.uk/products/jasper-james-wax-trax-vol-1-vinyl/1144085-01/
-J|D|Jeremias SANTIAGO|World Through My Eyes|Body N Deep Holland|12"|£15.25||https://www.juno.co.uk/products/jeremias-santiago-world-through-my-eyes-vinyl/1177113-01/
-J|D|JIMPSTER|Amour (20th Anniversary Edition)|Freerange|2xLP|£33.50||https://www.juno.co.uk/products/jimpster-amour-20th-anniversary-edition-vinyl/1179824-01/
-J|D|Josh LUDLOW|Brain Music|Rhythm Section International|12" in die-cut sleeve|£15.75||https://www.juno.co.uk/products/josh-ludlow-brain-music-vinyl/1180375-01/
-J|D|Joshua IDEHEN|Learn To Swim: A Mixtape|Heavenly|LP + MP3 download code|£21.50||https://www.juno.co.uk/products/joshua-idehen-learn-to-swim-a-mixtape-vinyl/1184035-01/
-J|D|JOVONN|Next Moov #2|Body N Deep Holland|12"|£15.25||https://www.juno.co.uk/products/jovonn-next-moov-2-vinyl/1177227-01/
-J|D|JS EDITS|Jolene Cuts 3|Skylax France|12"|£14.25||https://www.juno.co.uk/products/js-edits-jolene-cuts-3-vinyl/1110192-01/
-J|D|KASSIAN|Gradients EP|K7|recycled vinyl 12"|£17.50||https://www.juno.co.uk/products/kassian-gradients-ep-vinyl/1180369-01/
-J|D|KMFH / aka KYLE HALL|FTC Flps V3 (repress)|Forget The Clock|limited translucent blue marbled vinyl 12"|£32.50||https://www.juno.co.uk/products/kmfh-kyle-hall-ftc-flps-v3-repress-vinyl/1174345-01/
-J|D|LIRO|Analogue Forma|Bosom Ltd Portugal|12"|£16.75||https://www.juno.co.uk/products/liro-analogue-forma-vinyl/1181339-01/
-J|D|LODE|LODE 006|Lode|heavyweight vinyl 12"|£14.25||https://www.juno.co.uk/products/lode-006-vinyl/1154630-01/
-J|D|Louie VEGA / VARIOUS|Vega Records 5 Pack Unreleased VII|Vega US|5x12"|£66.75||https://www.juno.co.uk/products/louie-vega-vega-records-5-pack-unreleased-vii-vinyl/1182528-01/
-J|D|NACHO MARCO|Colors In Dub Vol 2|Phonogramme France|coloured vinyl 12"|£16.99 (also at Redeye)||https://www.juno.co.uk/products/nacho-marco-colors-in-dub-vol-2-vinyl/1162217-01/
-J|D|NUTIA / KITCHEN ISLAND / RAMON LEON|LELLEP 001|Lellep|red marbled vinyl 12"|£16.75||https://www.juno.co.uk/products/nutia-kitchen-island-ramon-leon-lellep-001-vinyl/1185848-01/
-J|D|OSSIE|Motivation EP|Heist Recordings Netherlands|limited 12"|£15.50||https://www.juno.co.uk/products/ossie-motivation-ep-vinyl/1183186-01/
-J|D|Roger GERRESSEN / SASCHA DIVE / RHADOW / LOLA PALMER|Bondage Games Part 11: Ursus|Bondage Germany|12"|£14.75||https://www.juno.co.uk/products/roger-gerressen-sascha-bondage-games-part-11-ursus-vinyl/1185753-01/
-J|D|SHAKA|Smoky Club EP|Seasons Limited US|12" repress|£12.99||https://www.juno.co.uk/products/shaka-smoky-club-ep-vinyl/1138635-01/
-J|D|SLXM SOL / SEAN GREEN / KINGCROWNEY / ZOE KYPRI / MAX SINAL|Re:Quest Vol 1 EP|Soul Quest|12"|£16.50||https://www.juno.co.uk/products/slxm-sol-sean-re-quest-vol-1-ep-vinyl/1181323-01/
-J|D|SOUND KLASH|Sound Klash 02|Stompa Phunk|12"|£14.99||https://www.juno.co.uk/products/sound-klash-02-vinyl/1181450-01/
-J|D|STONIE BLUE / RAMI / JT DONALDSON / BEN HIXON|That Feeling|Dolfin US|limited hand-stamped 1-sided 12"|£21.50||https://www.juno.co.uk/products/stonie-blue-rami-jt-donaldson-ben-that-feeling-vinyl/1187221-01/
-J|D|SUBB AN|Lotus Rising|Phonica Special Edition|LP|£28.25||https://www.juno.co.uk/products/subb-an-lotus-rising-vinyl/1183298-01/
-J|D|VARIOUS|Defected Classics Vol 4|Defected|3xLP in spot-varnished sleeve|£34.75||https://www.juno.co.uk/products/defected-classics-vol-4-vinyl/1181828-01/
-J|D|Zeynep ERBAY|Dans EP|Moments On The Floor|12"|£14.99||https://www.juno.co.uk/products/zeynep-erbay-dans-ep-vinyl/1181444-01/
-H|D|Brizman|Detroit Awareness|Memoria 064|12"|€16||https://hardwax.com/89674/brizman/detroit-awareness/
-C|D|Jeremias Santiago|World Through My Eyes (Album Sampler)|Body 'N Deep (BNDAS001)|12"|||https://clone.nl/item84628.html
-C|D|Jovonn|Next Moov #2|Next Moov Records (NMRT004V)|12"|||https://clone.nl/item84627.html
-B|D|Audiojack|Inside My Head||Vinyl|||https://audiojackmusic.bandcamp.com/album/inside-my-head
-B|D|Audiojack|Under Your Skin||Vinyl|||https://audiojackmusic.bandcamp.com/album/under-your-skin
-B|D|Audiojack|Stay Strong||Vinyl|||https://audiojackmusic.bandcamp.com/album/stay-strong
-B|D|Audiojack|Play With My Mind||Vinyl|||https://audiojackmusic.bandcamp.com/album/play-with-my-mind
-B|D|Audiojack x Jem Cooke|Feels Good||Vinyl|||https://audiojackmusic.bandcamp.com/album/feels-good
-B|D|Audiojack x Liset Alea|Believer||Vinyl|||https://audiojackmusic.bandcamp.com/album/believer
-B|D|Chez Damier, Ben Vedren, H2H|Fela (H2H aka Chez Damier & Ben Vedren Remix)||Vinyl|||https://deepcutsvinyl.bandcamp.com/album/fela-h2h-aka-chez-damier-ben-vedren-remix-vinyl-only-audio-previews-no-digital
-B|D|Chez Damier, H2H, Thomas Barnett|Les Perdre||Vinyl|||https://deepcutsvinyl.bandcamp.com/album/les-perdre-chez-damier-ben-vedren-h2h-thomas-barnett-vinyl-only-audio-previews-no-digital
-B|D|Cocuy Records|CRV01||Vinyl|||https://cocuyrecords.bandcamp.com/album/crv01
-B|D|CRYME|Glitch Gala||Vinyl|||https://neptunediscs.bandcamp.com/album/cryme-glitch-gala
-B|D|Deep Inspiration Show Records|Friends Of The Deep Part 2||Vinyl|||https://disrecords.bandcamp.com/album/friends-of-the-deep-part-2
-B|D|HAL & Perm|Blisterknistern||Vinyl|||https://kann.bandcamp.com/album/blisterknistern
-B|D|Jon E.|Messages From Easy Street, Part II||Vinyl|||https://naturalelementmusic.bandcamp.com/album/messages-from-easy-street-part-ii
-B|D|Lenny|Von Bömméll EP||Vinyl|||https://illfittedrecords.bandcamp.com/album/von-b-mm-ll-ep
-B|D|m.O.N.R.O.E.|Can't Stop This||Vinyl|||https://spasm-records.bandcamp.com/album/cant-stop-this
-B|D|Mush, Chez Damier, Orlando Voorn|Test 66 EP (Chez Damier Remixes)||Vinyl|||https://deepcutsvinyl.bandcamp.com/album/test-66-ep-chez-damier-remixes-2
-B|D|Nico Morano|Forever Ever Dancer (Full Album)||Vinyl|||https://nicomorano.bandcamp.com/album/forever-ever-dancer-full-album
-B|D|normal|House of Normalcy, Vol. 1||Vinyl|||https://normaldj.bandcamp.com/album/house-of-normalcy-vol-1
-B|D|Sascha Dive|My Definition of House Music Part 3||Vinyl|||https://deepvibesrecordings.bandcamp.com/album/my-definition-of-house-music-part-3
-B|D|The Trip|Clubdance2026 III||Vinyl|||https://thetriplondon.bandcamp.com/album/clubdance2026-iii
-R|H|A.S.H.A.|J.J. Tribute|Beat Club Records||£17.26|Preorder · 27 Nov|https://www.redeyerecords.co.uk/vinyl/202697-bcr-002390-a-s-h-a-j-j-tribute/
-R|H|Abacus|Analog Stories Vol.3|Phonogramme||£13.89|In stock|https://www.redeyerecords.co.uk/vinyl/176730-phonogramme56-abacus-analog-stories-vol-3/
-R|H|Al Sunny|My Love (Remixes)|Legere||£14.04|Preorder · 6 Nov|https://www.redeyerecords.co.uk/vinyl/201112-lego428vl-al-sunny-my-love-remixes/
-R|H|Bas Dobbelaer|In Motion|Something Happening Somewhere||£14.55|Preorder · 30 Nov|https://www.redeyerecords.co.uk/vinyl/202599-sohaso068-bas-dobbelaer-in-motion/
-R|H|Battistino|Il Segreto EP|Mondo Groove||£14.11|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/201424-mgms26-battistino-il-segreto-ep/
-R|H|Black Eyes|Ocean FLoor Funk EP (Incl. Abacus RMX)|Rawax Motor City Edition||£12.02|In stock|https://www.redeyerecords.co.uk/vinyl/182206-rmce028-black-eyes-ocean-floor-funk-ep-incl-abacus-rmx/
-R|H|Black M1d1|The Hot Hands|I'm In Love Records||£13.87|In stock|https://www.redeyerecords.co.uk/vinyl/202132-iil014-black-m1d1-the-hot-hands/
-R|H|Boo Williams|Lost Of Time|Chiwax Classic Edition|2x12"|£26.24|In stock|https://www.redeyerecords.co.uk/vinyl/192658-cce047-boo-williams-lost-of-time-2x12/
-R|H|Brennan|Limo Trax Brennan|Limousine Dream||£13.17|Preorder · 30 Nov|https://www.redeyerecords.co.uk/vinyl/202644-ltrax-08-brennan-limo-trax-brennan/
-R|H|Byron Stingily|Get Up (Everybody)|Groovin Recordings||£14.58|Preorder · 27 Nov|https://www.redeyerecords.co.uk/vinyl/202502-gr-12146-byron-stingily-get-up-everybody/
-R|H|Cabin Luv Affair|Bien Suave EP|Chiwax||£12.23|Out of stock|https://www.redeyerecords.co.uk/vinyl/189495-cwx09-cabin-luv-affair-bien-suave-ep/
-R|H|Cam Harrop|Hold On EP|Freq||£14.39|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/202655-freq001-cam-harrop-hold-on-ep/
-R|H|Camiel Daamen|Freeborn Selections V2|Freeborn Records||£11.78|Preorder · 18 Dec|https://www.redeyerecords.co.uk/vinyl/202710-freeborndisc002-camiel-daamen-freeborn-selections-v2/
-R|H|Cloud Minus|Truth Like Memory|Dapple||£14.65|Preorder · 20 Nov|https://www.redeyerecords.co.uk/vinyl/202721-dppl001-cloud-minus-truth-like-memory/
-R|H|Dandolo|Vischio|Mirella Records||£13.74|Preorder · 2 Dec|https://www.redeyerecords.co.uk/vinyl/202631-mir008-dandolo-vischio/
-R|H|David Heine|Suspended In Time|Weirdmouthrecords||£11.83|Preorder · 6 Nov|https://www.redeyerecords.co.uk/vinyl/202574-wmr005-david-heine-suspended-in-time/
-R|H|DEEP88|Summer of Love EP|Hotmix Records||£13.19|In stock|https://www.redeyerecords.co.uk/vinyl/193366-hm037-deep88-summer-of-love-ep/
-R|H|DJ Assassin|Face Amongst The Crowd|Cross Section Records||£12.48|Preorder · 27 Nov|https://www.redeyerecords.co.uk/vinyl/24106-cs127-dj-assassin-face-amongst-the-crowd/
-R|H|DJ Face|Face EP|Saft||£12.90|Preorder · 30 Nov|https://www.redeyerecords.co.uk/vinyl/202623-saftx008-dj-face-face-ep/
-R|H|DJ GARTH / ETI / DJ HARVEY / NECTAR|REALROCKDESIGN & DJ Garth Present: Grayhound Revisited - The Sun Also Rises|Realrockdesign||£16.77|Preorder · 6 Nov|https://www.redeyerecords.co.uk/vinyl/198656-rrd30-001-dj-garth-eti-dj-harvey-nectar-realrockdesign-and-dj-garth-present-grayhound-revisited-the-sun-also-rises/
-R|H|DJ Tjizza|All Clocks Down EP|Shock O'clock||£17.16|Preorder · 29 Nov|https://www.redeyerecords.co.uk/vinyl/202577-shock-oclock-dj-tjizza-all-clocks-down-ep/
-R|H|DOCTOR ROCKIT (Matthew Herbert)|CAFE DE FLORE (30-YEAR ANNIVERSARY EDITION/REISSUE)|Accidental Records||£18.72|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/202714-ac228-doctor-rockit-matthew-herbert-cafe-de-flore-30-year-anniversary-edition-reissue/
-R|H|Dr Packer, Elektrik Disko, Mattei & Omich, Re-Tide, Lukas Setto|Fool's Paradise Sampler Vol. 3|Fool's Paradise||£12.48|Preorder · 6 Nov|https://www.redeyerecords.co.uk/vinyl/175349-fp003-dr-packer-elektrik-disko-mattei-and-omich-re-tide-lukas-setto-fools-paradise-sampler-vol-3/
-R|H|Dust-E-1|Return 2 Dust EP|Dust World||£13.14|Preorder · 18 Dec|https://www.redeyerecords.co.uk/vinyl/192942-dwld008-dust-e-1-return-2-dust-ep/
-R|H|E.T.H (Italy)|NEON INFERNO|Basement Beats||£11.68|In stock|https://www.redeyerecords.co.uk/vinyl/193184-bblp001-e-t-h-italy-neon-inferno/
-R|H|Eb_flow|Healing Faze EP|Fuse London||£12.46|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/202719-fuse070-eb_flow-healing-faze-ep/
-R|H|El Payo, Stefano De Santis, Jose Rico|Best Of Various 10|Ten Lovers Music||£12.14|Preorder · 30 Nov|https://www.redeyerecords.co.uk/vinyl/202619-tlm043-v-a-el-payo-stefano-de-santis-jose-rico-best-of-various-10/
-R|H|ELOQ & V. Christie|Permafrost|Time Is Now||£12.48|In stock|https://www.redeyerecords.co.uk/vinyl/202087-tin081v-eloq-and-v-christie-permafrost/
-R|H|Family Tree Ft. Sharon Brown|Family Tree|Acid Jazz / Ost||£17.16|In stock|https://www.redeyerecords.co.uk/vinyl/201528-ajx484t-family-tree-ft-sharon-brown-family-tree/
-R|H|Feater|Time Million Feat. Vilja Larjos - Pepe Bradock & Villalobos Remixes|Running Back||£11.81|Preorder · 20 Nov|https://www.redeyerecords.co.uk/vinyl/107722-rbfeaterrmx1-feater-time-million-feat-vilja-larjos-pepe-bradock-and-villalobos-remixes/
-R|H|Feater|Time Million Feat. Vilja Larjos - Pepe Bradock Bonus Bit & Villalobos Dubs|Running Back||£11.81|Preorder · 20 Nov|https://www.redeyerecords.co.uk/vinyl/107723-rbfeaterrmx2-feater-time-million-feat-vilja-larjos-pepe-bradock-bonus-bit-and-villalobos-dubs/
-R|H|Fort Romeau|Sunlight EP|Rawax||£12.09|In stock|https://www.redeyerecords.co.uk/vinyl/197891-rawax036-1-fort-romeau-sunlight-ep/
-R|H|Fred P|Distant Travels EP|Syncrophone||£13.88|In stock|https://www.redeyerecords.co.uk/vinyl/184225-syncro66-fred-p-distant-travels-ep/
-R|H|Fresh & Low|Burnin Love|Rawax||£13.19|In stock|https://www.redeyerecords.co.uk/vinyl/185042-rxt-08-fresh-and-low-burnin-love/
-R|H|Fresh & Low|Fever Tension / Fresh Juice II|Rawax||£13.19|Out of stock|https://www.redeyerecords.co.uk/vinyl/196816-rxt-10-fresh-and-low-fever-tension-fresh-juice-ii/
-R|H|Fresh & Low|Litte "i" EP|Rawax||£13.19|Out of stock|https://www.redeyerecords.co.uk/vinyl/168536-rxt-01-fresh-and-low-litte-i-ep/
-R|H|Fresh & Low|Open Spance EP (Limited Crystal Clear Green Vinyl)|Rawax||£13.87|In stock|https://www.redeyerecords.co.uk/vinyl/183946-rxt-02g-fresh-and-low-open-spance-ep-limited-crystal-clear-green-vinyl/
-R|H|Funky Trip|Dreamwalker EP|Maono Records||£11.78|Preorder · 18 Dec|https://www.redeyerecords.co.uk/vinyl/202709-mao-v004-funky-trip-dreamwalker-ep/
-R|H|Gari Romalis|Detroit-Sync EP|Phonogramme||£13.89|In stock|https://www.redeyerecords.co.uk/vinyl/171191-phonogramme44-gari-romalis-detroit-sync-ep/
-R|H|Gemini|Swimmin Wit' Sharks EP|Chiwax||£11.81|Out of stock|https://www.redeyerecords.co.uk/vinyl/43452-cgtx002-gemini-swimmin-wit-sharks-ep/
-R|H|GOME|Free Refill EP|803 Crystal Grooves Collective Cuts||£12.91|In stock|https://www.redeyerecords.co.uk/vinyl/199937-803cg-cc011-gome-free-refill-ep/
-R|H|Grain & Logue|MINERAL08|Mineral Cuts||£13.17|In stock|https://www.redeyerecords.co.uk/vinyl/168799-mineral08r-grain-and-logue-mineral08/
-R|H|Gunnter|Coco Bango EP|Rawax||£12.91|Out of stock|https://www.redeyerecords.co.uk/vinyl/195909-rawax028ltd-gunnter-coco-bango-ep/
-R|H|Harold Heath|CTZN Of FLAT 22: Harold Heath|Flat 22||£13.87|Preorder · 1 Dec|https://www.redeyerecords.co.uk/vinyl/202663-ctzn002-harold-heath-ctzn-of-flat-22-harold-heath/
-R|H|Horror Inc|A Soundtrack For Strange Times (Part 3)|Anoma||£13.02|Preorder · 2 Dec|https://www.redeyerecords.co.uk/vinyl/202698-aoa006-ef-horror-inc-a-soundtrack-for-strange-times-part-3/
-R|H|Housey Doingz|Baby Dunit|White Label Hd||£14.80|Preorder · 6 Nov|https://www.redeyerecords.co.uk/vinyl/200203-hd1-housey-doingz-baby-dunit/
-R|H|Hysteric|DB12 021|Duca Bianco||£15.58|Preorder · 30 Nov|https://www.redeyerecords.co.uk/vinyl/202638-db12-021-hysteric-db12-021/
-R|H|Jan Ketel|Love EP (Incl. Siggatunez & Quadrakey Remixes)|Tooman Records||£11.79|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/202679-tmn015-jan-ketel-love-ep-incl-siggatunez-and-quadrakey-remixes/
-R|H|Jasper James|Wax Trax Vol. 1|Chiwax||£12.50|In stock|https://www.redeyerecords.co.uk/vinyl/193207-cwx04-2-jasper-james-wax-trax-vol-1/
-R|H|Jon E.|Messages From Easy Street, Part II|Natural Element||£13.65|Preorder · 30 Nov|https://www.redeyerecords.co.uk/vinyl/202624-ne006-jon-e-messages-from-easy-street-part-ii/
-R|H|Joplyn|Can't Get Enough / Fact & Fiction (Adana Twins/JAMIIE Remixes)|Watergate Records||£12.57|Preorder · 20 Nov|https://www.redeyerecords.co.uk/vinyl/150611-wgvinyl91-joplyn-cant-get-enough-fact-and-fiction-adana-twins-jamiie-remixes/
-R|H|Joss Moog & 908|Prodige EP|Robsoul||£11.82|Out of stock|https://www.redeyerecords.co.uk/vinyl/196466-robsoul367-joss-moog-and-908-prodige-ep/
-R|H|Jude & Frank / FDVM / ESSEL / James Hurr / Jewel Kid / Andrea Lane|Toolroom Trax Sampler Vol. 9|Toolroom Trax||£12.87|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/202716-trxvs009-jude-and-frank-fdvm-essel-james-hurr-jewel-kid-andrea-lane-toolroom-trax-sampler-vol-9/
-R|H|K15|Liminality|Esencia||£12.90|Preorder · 30 Nov|https://www.redeyerecords.co.uk/vinyl/202617-esc017-k15-liminality/
-R|H|KAKERU|Raw Courage|Shaw Cuts||£12.50|Out of stock|https://www.redeyerecords.co.uk/vinyl/188213-sc022-kakeru-raw-courage/
-R|H|Karizma|Call !t A Rem!x|R2 Records||£24.96|Preorder · 30 Nov|https://www.redeyerecords.co.uk/vinyl/202618-r2lp035-karizma-call-!t-a-rem!x/
-R|H|Kelton Prima|Pralines & Chocolats Ep (Incl. Ian Pooley & Radic The Myth Remixes)|Ravanelli Disco Club||£12.46|In stock|https://www.redeyerecords.co.uk/vinyl/199793-rdc022-kelton-prima-pralines-and-chocolats-ep-incl-ian-pooley-and-radic-the-myth-remixes/
-R|H|Khan feat. Julee Cruise|Say Goodbye (Remixes by LoSoul, Rework, Isolée)|Rawax||£12.02|In stock|https://www.redeyerecords.co.uk/vinyl/184488-rxk-01-khan-feat-julee-cruise-say-goodbye-remixes-by-losoul-rework-isol%C3%A9e/
-R|H|Kikko Esse|Wisdom Of Many Minds EP|Four Framed Music||£15.79|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/200077-fourframed008-kikko-esse-wisdom-of-many-minds-ep/
-R|H|KurUlo|Psalm Of The Sleepless|Wicked Bass||£12.51|Out of stock|https://www.redeyerecords.co.uk/vinyl/200390-wb033-kurulo-psalm-of-the-sleepless/
-R|H|Les Yeux Orange|French Affair|Good Plus||£11.82|Out of stock|https://www.redeyerecords.co.uk/vinyl/197606-g-006-les-yeux-orange-french-affair/
-R|H|Levan Grdzelidze|Izamat|Griffé||£13.64|Preorder · 6 Nov|https://www.redeyerecords.co.uk/vinyl/188060-grff021-levan-grdzelidze-izamat/
-R|H|Lexicon Avenue|Here I Am|Endell Street||£14.04|Preorder · 11 Dec|https://www.redeyerecords.co.uk/vinyl/202685-es-11-lexicon-avenue-here-i-am/
-R|H|Légo|El Ritmo De Verdad|Groovin Recordings||£14.91|Preorder · 20 Nov|https://www.redeyerecords.co.uk/vinyl/199159-gr-12139-l%C3%A9go-el-ritmo-de-verdad/
-R|H|Malachi|Where's The Soap / Scuba (Reissue)|Curated By Time||£12.49|Preorder · 30 Nov|https://www.redeyerecords.co.uk/vinyl/202641-bytime018-malachi-wheres-the-soap-scuba-reissue/
-R|H|Malik Hendricks|Ten Toes Down EP (Incl. Kai Alce Remix)|Vibes & Pepper||£11.80|Preorder · 30 Nov|https://www.redeyerecords.co.uk/vinyl/202621-vp015-malik-hendricks-ten-toes-down-ep-incl-kai-alce-remix/
-R|H|Malik Kassim Aka Retromigration|Choices EP Vol.2|Wolf Music||£12.87|Preorder · 6 Nov|https://www.redeyerecords.co.uk/vinyl/201208-wolfep090-malik-kassim-aka-retromigration-choices-ep-vol-2/
-R|H|Marc COTTERELL|Gadget Tracks|Plastik People||£12.46|Preorder · 6 Nov|https://www.redeyerecords.co.uk/vinyl/199311-ppltd-12-marc-cotterell-gadget-tracks/
-R|H|Mathijs Smit|Level 7|Dma||£13.20|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/197257-dmaf002-mathijs-smit-level-7/
-R|H|Matthias Schildger & Rupert Hartick|Dudes EP|Konfus||£11.47|In stock|https://www.redeyerecords.co.uk/vinyl/174324-konfus004-matthias-schildger-and-rupert-hartick-dudes-ep/
-R|H|Max Kernmayer|Proper Bassline EP|Traxx Underground||£13.19|Preorder · 29 Nov|https://www.redeyerecords.co.uk/vinyl/202607-tultd012-max-kernmayer-proper-bassline-ep/
-R|H|Mikekon ft. Josh Milan|Slow Down (Incl. Kai Alce Remix)|Wip Music||£12.90|Preorder · 30 Nov|https://www.redeyerecords.co.uk/vinyl/202620-wip011-mikekon-ft-josh-milan-slow-down-incl-kai-alce-remix/
-R|H|Monolink|Powerful Play (Incl Andhim Remix)|Embassy One||£13.34|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/183416-771503-monolink-powerful-play-incl-andhim-remix/
-R|H|Moritz Piske|Dirt Cabana (Losoul Rmx, Anneke Laurent Rmx)|Salon Records||£14.37|In stock|https://www.redeyerecords.co.uk/vinyl/199202-salon026-moritz-piske-dirt-cabana-losoul-rmx-anneke-laurent-rmx/
-R|H|Mr. Barcode|Battlestar|Mr Barcode||£13.74|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/181058-qr001-mr-barcode-battlestar/
-R|H|Nacho Marco|Colors In Dub Vol.2 (Incl. Steve Bug Remix)|Phonogramme||£13.88|In stock|https://www.redeyerecords.co.uk/vinyl/198243-phonogramme81-nacho-marco-colors-in-dub-vol-2-incl-steve-bug-remix/
-R|H|NAIL|Vibe Xebra EP|Midnight Social Recordings||£12.50|Preorder · 23 Nov|https://www.redeyerecords.co.uk/vinyl/202606-msr003-nail-vibe-xebra-ep/
-R|H|Najel Monteiro|Raíz|Bouman Records||£13.29|Preorder · 27 Nov|https://www.redeyerecords.co.uk/vinyl/202590-bmr006-najel-monteiro-ra%C3%ADz/
-R|H|Natebytheway|Sorry Sucka EP|Ghost Recs||£12.76|Preorder · 9 Nov|https://www.redeyerecords.co.uk/vinyl/202643-grecs007-natebytheway-sorry-sucka-ep/
-R|H|Natural Goofy|Continuous EP (Incl. Shkedul Remix)|Planka Records||£12.49|Preorder · 6 Nov|https://www.redeyerecords.co.uk/vinyl/199277-plnk008-natural-goofy-continuous-ep-incl-shkedul-remix/
-R|H|Nicolas Duvoisin|Walking On The Street EP|Fantastic Friends||£12.50|Preorder · 29 Nov|https://www.redeyerecords.co.uk/vinyl/202608-ffrvo012-nicolas-duvoisin-walking-on-the-street-ep/
-R|H|NINA|Air To Throne (K-Lone Rmx)|Substrata||£12.33|In stock|https://www.redeyerecords.co.uk/vinyl/200032-sub001-nina-air-to-throne-k-lone-rmx/
-R|H|No:name|GIABR009|Genie In A Bottle Records||£12.49|Preorder · 30 Nov|https://www.redeyerecords.co.uk/vinyl/202634-giabr009-no-name-giabr009/
-R|H|Paolo Macrì|Nobody Knows|Radici||£13.39|Preorder · 6 Nov|https://www.redeyerecords.co.uk/vinyl/186155-rdc003-paolo-macr%C3%AC-nobody-knows/
-R|H|PillowTalk / Soul Clap Ft. Crew Love / Greg Paulus|Love Train Remixes (Incl. Louie Vega + Makez Remixes)|Soul Clap Records||£12.90|Preorder · 30 Nov|https://www.redeyerecords.co.uk/vinyl/202628-scr100-pillowtalk-soul-clap-ft-crew-love-greg-paulus-love-train-remixes-incl-louie-vega-makez-remixes/
-R|H|Prince De Takicardie|Peace Music EP|Opia Records||£11.70|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/193339-opia019-prince-de-takicardie-peace-music-ep/
-R|H|Ramsey & Company|Love Call|Celestial Echo||£12.46|Preorder · 6 Nov|https://www.redeyerecords.co.uk/vinyl/200807-cer015-ramsey-and-company-love-call/
-R|H|Rokko|Copasetic EP|Magic Water Records||£13.50|Preorder · 17 Nov|https://www.redeyerecords.co.uk/vinyl/202720-mwr-001-rokko-copasetic-ep/
-R|H|Romaal Kultan|Correlate|Darker Than Wax||£12.14|Preorder · 30 Nov|https://www.redeyerecords.co.uk/vinyl/202626-dtw084-romaal-kultan-correlate/
-R|H|Rossiter|Baby Monitor EP|Sunday Brunch Recordings||£15.21|Preorder · 8 Nov|https://www.redeyerecords.co.uk/vinyl/200925-sb001-rossiter-baby-monitor-ep/
-R|H|Rural Groove Foundation|Space Funk E.P. (Repress)|Legacy Cuts||£12.91|Preorder · 30 Nov|https://www.redeyerecords.co.uk/vinyl/202630-lc01-rural-groove-foundation-space-funk-e-p-repress/
-R|H|Sam Crowe|Heart / Space|Eglo Records||£17.42|Preorder · 30 Nov|https://www.redeyerecords.co.uk/vinyl/202627-eglo102-sam-crowe-heart-space/
-R|H|Samuel Deep / William Caycedo / Locklead / Julian Alexander|Slap Wax 1|Rawax||£12.91|In stock|https://www.redeyerecords.co.uk/vinyl/91788-rwxsfk01-slap-wax-1-va/
-R|H|Siggatunez|Get Together EP|Small Great Things||£11.80|Preorder · 30 Nov|https://www.redeyerecords.co.uk/vinyl/202632-sgt015-siggatunez-get-together-ep/
-R|H|Simon Paw Ft. Angel-A|Let My Life Shine (Incl. Coflo Rmx)|Notturno Music||£12.14|Preorder · 30 Nov|https://www.redeyerecords.co.uk/vinyl/202625-nt002-simon-paw-ft-angel-a-let-my-life-shine-incl-coflo-rmx/
-R|H|Sonidy & Erratic|Space Drift EP|Yuzu Music||£12.12|In stock|https://www.redeyerecords.co.uk/vinyl/177726-yuz005-sonidy-and-erratic-space-drift-ep/
-R|H|Space Ghost|Back From Reality|Peace World Records||£19.64|Preorder · 6 Nov|https://www.redeyerecords.co.uk/vinyl/199547-pwr005-space-ghost-back-from-reality/
-R|H|Space Motion|The Essentials|Iconyc||£17.30|Out of stock|https://www.redeyerecords.co.uk/vinyl/200476-sm-001-space-motion-the-essentials/
-R|H|Sparkling Attitude|Club Splendore Vol. 2|Mondo Groove||£16.28|Preorder · 27 Nov|https://www.redeyerecords.co.uk/vinyl/202629-com530-sparkling-attitude-club-splendore-vol-2/
-R|H|Squash|Minimal Effort EP|Gradient Recordings||£12.21|Preorder · 30 Nov|https://www.redeyerecords.co.uk/vinyl/202642-gr005-squash-minimal-effort-ep/
-R|H|St. David|House Games|Tessellate||£12.48|Preorder · 20 Nov|https://www.redeyerecords.co.uk/vinyl/202677-tess029-st-david-house-games/
-R|H|Super Flu, Dennis Naidanow, Peace Control, Eric Reye|Didschn Vinyl 003|Didschn||£13.17|Preorder · 1 Dec|https://www.redeyerecords.co.uk/vinyl/202686-didschnvinyl003-super-flu-dennis-naidanow-peace-control-eric-reye-didschn-vinyl-003/
-R|H|Terrence Parker|Tribute|Intangible Records||£13.19|In stock|https://www.redeyerecords.co.uk/vinyl/54260-int-7000-terrence-parker-tribute/
-R|H|The Ones|Flawless|Groovin Recordings||£11.97|Preorder · 1 Dec|https://www.redeyerecords.co.uk/vinyl/202658-gr-12128-the-ones-flawless/
-R|H|Tiago Walter|Fantasy EP|Koltrax||£11.78|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/202713-kox06-tiago-walter-fantasy-ep/
-R|H|Unknown|Coast2Coast 007|Coast2coast||£12.45|Preorder · 17 Nov|https://www.redeyerecords.co.uk/vinyl/202717-c2c007-unknown-coast2coast-007/
-R|H|Unknown Artist|SEA002|Sinial||£13.04|Preorder · 20 Nov|https://www.redeyerecords.co.uk/vinyl/202660-sea002-unknown-artist-sea002/
-R|H|V.I.C.A.R.I.|Fuzzy|My Cup Of Tea||£12.88|Preorder · 26 Nov|https://www.redeyerecords.co.uk/vinyl/202649-mcot005-v-i-c-a-r-i-fuzzy/
-R|H|Valerio Vaudano|The Sampling Theory Pt. 1|Chiwax||£11.81|In stock|https://www.redeyerecords.co.uk/vinyl/191545-chiwax048-valerio-vaudano-the-sampling-theory-pt-1/
-R|H|Various|Bureau Electronique|Unex Pected||£15.65|Preorder · 30 Nov|https://www.redeyerecords.co.uk/vinyl/202635-unx003-various-bureau-electronique/
-R|H|Various|Lisztolove Vol. 2|Lisztomania||£11.80|Preorder · 30 Nov|https://www.redeyerecords.co.uk/vinyl/202633-lisztwax006-various-lisztolove-vol-2/
-R|H|Various Artists|Jazzy Sport Past Forward: Silver|Jazzy Sport London||£20.26|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/201353-jsl001-jazzy-sport-past-forward-silver-va/
-R|H|Various Artists|Diamonds In The Nights Vol. 8 EP|Bordello A Parigi||£13.58|Preorder · 20 Nov|https://www.redeyerecords.co.uk/vinyl/196857-bap248-various-artists-diamonds-in-the-nights-vol-8-ep/
-R|H|Various Artists|El Fell Journey EP|Fabrika Records||£15.47|Out of stock|https://www.redeyerecords.co.uk/vinyl/202094-fbrk001-various-artists-el-fell-journey-ep/
-R|H|Various Artists|Shakattack Bites Vol. 1|Shakattack Records||£13.02|In stock|https://www.redeyerecords.co.uk/vinyl/199192-shak001-various-artists-shakattack-bites-vol-1/
-R|H|Various Artists|Bondage Games Part 11: Leo|Bondage-Music||£12.75|Preorder · 11 Dec|https://www.redeyerecords.co.uk/vinyl/202688-bond12084-4-v-a-bondage-games-part-11-leo/
-R|H|Various Artists|Bondage Games Part 11: Muris|Bondage-Music||£12.75|Preorder · 11 Dec|https://www.redeyerecords.co.uk/vinyl/202689-bond12084-3-v-a-bondage-games-part-11-muris/
-R|H|Various Artists|Antesala|Antesala Records||£13.87|Preorder · 1 Dec|https://www.redeyerecords.co.uk/vinyl/202659-anv01-various-artists-antesala/
-R|H|Various Artists|Homegrown EP|Makin' Moves||£12.14|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/202622-makinep023-v-a-homegrown-ep/
-R|H|Various Artists|AUS ? Fabric: ROOM 02|Fabric Originals||£13.26|Preorder · 27 Nov|https://www.redeyerecords.co.uk/vinyl/202637-ausfro217lp-various-artists-aus-?-fabric-room-02/
-R|H|Volkan Akin|Petrol EP (Incl. Insert & DL Code)|Love On The Rocks||£21.41|Preorder · 27 Nov|https://www.redeyerecords.co.uk/vinyl/202683-lotr033-volkan-akin-petrol-ep-incl-insert-and-dl-code/
-R|H|Westcoast Goddess|Happy Planet EP|Chiwax||£12.50|In stock|https://www.redeyerecords.co.uk/vinyl/196270-cwx010-westcoast-goddess-happy-planet-ep/
-J|E|NURON / FUGUE|Likemind 02|Blueprint Archives France|12"|£17.25||https://www.juno.co.uk/products/nuron-fugue-likemind-02-vinyl/1169261-01/
-J|E|RADIOACTIVE MAN|Hole In The Fire|Asking For Trouble|12"|£21.75||https://www.juno.co.uk/products/radioactive-man-hole-in-the-fire-vinyl/1187656-01/
-J|E|TRANSPARENT SOUND|The Lost Tapes EP|No Static/Automatic|12"|£21.25||https://www.juno.co.uk/products/transparent-sound-the-lost-tapes-ep-vinyl/1185422-01/
-J|E|ZETA RETICULA|Return To Zeta Prime|Distorted Sensory Perception|12"|£15.99||https://www.juno.co.uk/products/zeta-reticula-return-to-zeta-prime-vinyl/1175316-01/
-R|E|Carl Finlow & Noha|Reprise|Panick Panick!||£13.84|In stock|https://www.redeyerecords.co.uk/vinyl/171834-pp017-carl-finlow-and-noha-reprise/
-R|E|DJ Slugo/BWW/SCHW|The Block Party EP|Miami Beat$||£15.60|Preorder · 29 Nov|https://www.redeyerecords.co.uk/vinyl/202575-miami-beat$-003-dj-slugo-bww-schw-the-block-party-ep/
-R|E|Flits|Advance|Diffuse Reality||£16.85|Preorder · 20 Nov|https://www.redeyerecords.co.uk/vinyl/202522-tb006-flits-advance/
-R|E|MATRIXXMAN|HONG KONG NIGHT (Remixes)|Planet X||£12.37|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/202593-px-303-matrixxman-hong-kong-night-remixes/
-R|E|Nachtlinie|Ghost Recall EP|Gladio Operations||£13.74|Preorder · 28 Nov|https://www.redeyerecords.co.uk/vinyl/202527-go018-nachtlinie-ghost-recall-ep/
-R|E|Paradise City Breakers|Paradise City Chronicles Vol.2|Paradise City Chronicles||£12.50|Preorder · 10 Dec|https://www.redeyerecords.co.uk/vinyl/202541-pcc-002-paradise-city-breakers-paradise-city-chronicles-vol-2/
-R|E|The Egyptian Lover|Everything She Wants / So Good|Egyptian Empire Records||£21.84|Preorder · 20 Nov|https://www.redeyerecords.co.uk/vinyl/191246-dmsr8707-1-the-egyptian-lover-everything-she-wants-so-good/
-C|E|DJ Nobu & JakoJako|Wax and Wane / Nodus|Bitta (Bitta017)|12"|||https://clone.nl/item85085.html
-B|E|Bella Eterna|2Faces||Vinyl|||https://motsmusic.bandcamp.com/album/2faces-2
-B|E|Coaxial System|Brainstorm||Vinyl|||https://diffusereality.bandcamp.com/album/coaxial-system-brainstorm-vinyl
-B|E|DJ Beluga92, Dani Labb & more|I Told You To Stay At Home You Are Grounded Now Tuna Casserole For Dinner||Vinyl|||https://stayathomerecord.bandcamp.com/album/i-told-you-to-stay-at-home-you-are-grounded-now-tuna-casserole-for-dinner
-B|E|Franco Rossi, Roi, Alexey Dunchyk|Aumatra Vol.V||Vinyl|||https://fanzinerecords.bandcamp.com/album/aumatra-vol-v
-B|E|HENGE|HUMANS||Vinyl|||https://hengemusic.bandcamp.com/album/humans
-B|E|Mystic Freaks|Interplanetary Hustling||Vinyl|||https://frapperecords.bandcamp.com/album/interplanetary-hustling
-B|E|Nachtlinie|Ghost Recall EP||Vinyl|||https://gladiooperations.bandcamp.com/album/ghost-recall-ep
-B|E|Plant43|Glide Ratio||Vinyl|||https://plant43.bandcamp.com/album/glide-ratio-2
-B|E|RUB800|Risk Graphs EP [LNS11]||Vinyl|||https://latenightsuperglue.bandcamp.com/album/rub800-risk-graphs-ep-lns11
-B|E|Slit Observers|The next condition||Vinyl|||https://fanzinerecords.bandcamp.com/album/the-next-condition
-B|E|Umwelt|Parable of Power||Vinyl|||https://mechatronica.bandcamp.com/album/parable-of-power`;
-const PICKS=[["Steffi", "Half An Owl And A Full Moon Rising", "Dekmantel double LP, listed at Hard Wax for €35."], ["NVST", "Godspeed", "Tresor 12\" (Tresor389) at Hard Wax for €15.50."], ["Brizman", "Detroit Awareness", "Memoria 064 12\" at Hard Wax — the one Deep House pick from Hard Wax this week."], ["RADIOACTIVE MAN", "Hole In The Fire", "Asking For Trouble 12\" tagged Electro by Juno, £21.75."], ["Carl Finlow & Noha", "Reprise", "Panick Panick! release, in stock at Redeye for £13.84 ex VAT."], ["Abacus", "Analog Stories Vol.3", "Phonogramme release in Redeye's house section, in stock at £13.89 ex VAT."], ["DJ Nobu & JakoJako", "Wax and Wane / Nodus", "Bitta 12\" (Bitta017) new on Clone's homepage."], ["Jovonn", "Next Moov #2", "Next Moov Records 12\" (NMRT004V) new on Clone's homepage."]];
+const DIGEST={"week": "w/c 2 Nov 2026", "built": "Updated Wed 11 Nov with this week's digest email · refreshes every Monday", "status": [["Juno", 51, true, "From the Juno email for w/c Sunday 8 Nov (Techno, Deep House, Electro tags); CDs and equipment dropped. GBP."], ["Redeye", 257, true, "Techno-electro and house-disco, 5 pages each; edits and disco dropped, one record skipped for a bad link. Prices ex VAT."], ["Hard Wax", 23, true, "23 records from This Week; ambient, reggae, D&B, bass and disco-dub dropped. EUR."], ["Clone", 22, true, "Homepage records, no dates or prices shown; genres assigned from artist and label."], ["Bandcamp", 56, true, "Discover vinyl, newest, in techno, deep house, electro and minimal; no prices or dates shown."], ["Fingerprints", 0, false, "Nothing in your genres this week."]], "playlists": [["Techno", "T", "https://open.spotify.com/playlist/5w7WVlxERnmn7FgtNfvJx3"], ["Deep House", "D", "https://open.spotify.com/playlist/4hpxoJu6ratLV10qcEWNTn"], ["House", "H", "https://open.spotify.com/playlist/793ZfGFEoK1OXuTpvC2pdZ"], ["Electro + Minimal", "E", "https://open.spotify.com/playlist/1v4ul22ttiEJgFZ1I9wlcc"]]};
+const RAW=`J|T|7CIRCLE|Fracture EP|Destroy To Rebuild|hand-numbered 180 gram coloured vinyl 12" limited to 200 copies|£17.25||https://www.juno.co.uk/products/7circle-fracture-ep-vinyl/1180586-01/
+J|T|ATRICE|Default Settings|Ilian Tape Germany|heavyweight vinyl 2xLP + MP3 download code|£28.99||https://www.juno.co.uk/products/atrice-default-settings-vinyl/1189317-01/
+J|T|Aurora HALAL|Red Alert|Mutual Dreaming Recordings|12"|£13.25||https://www.juno.co.uk/products/aurora-halal-red-alert-vinyl/1156139-01/
+J|T|Axel KARAKASIS / KILL REF / VAROSIAN / NEPHILIM / VKN MODULAR / YIGITOGLU|Wicked Mechanism EP|Special Series Brazil|12"|£14.25||https://www.juno.co.uk/products/axel-karakasis-kill-ref-varosian-wicked-mechanism-ep-vinyl/1168082-01/
+J|T|CAILIN|Gealach Fola EP|Frequency Architecture France|12"|£16.25||https://www.juno.co.uk/products/cailin-gealach-fola-ep-vinyl/1159545-01/
+J|T|Carl FINLOW|Reprise|Panick Panick! Italy|12" repress|£16.99||https://www.juno.co.uk/products/carl-finlow-reprise-vinyl/1009968-01/
+J|T|Chris LIEBING / JOSH WINK|Eye C (Josh Wink remix)|CLR Germany|12"|£16.99||https://www.juno.co.uk/products/chris-liebing-josh-eye-c-josh-wink-remix-vinyl/1170464-01/
+J|T|Dave ANGEL|A Time & Place|R&S|gatefold 3xLP|£38.75||https://www.juno.co.uk/products/dave-angel-a-time-place-vinyl/1172788-01/
+J|T|DECKA|Havoc|HAYES Portugal|12"|£15.50||https://www.juno.co.uk/products/decka-havoc-vinyl/1183254-01/
+J|T|Dimi ANGELIS|Night Gallery|Modwerks|12"|£14.25||https://www.juno.co.uk/products/dimi-angelis-night-gallery-vinyl/1182420-01/
+J|T|GINNO|Cyberpassion EP|Sinthology|12"|£13.99||https://www.juno.co.uk/products/ginno-cyberpassion-ep-vinyl/1162563-01/
+J|T|GROOVEDEEP|Speed Queen EP|Fixed Rhythms|12"|£17.25 (also at Redeye)||https://www.juno.co.uk/products/groovedeep-speed-queen-ep-vinyl/1179604-01/
+J|T|Harvey MacKAY|Table For One|Systematic Germany|limited 12" picture disc|£23.75||https://www.juno.co.uk/products/harvey-mackay-table-for-one-vinyl/1186366-01/
+J|T|Hector OAKS|Parche Y Lija|Oaks Germany|12"|£14.99||https://www.juno.co.uk/products/hector-oaks-parche-y-lija-vinyl/1180580-01/
+J|T|KERRIE|Pressure Signal|Blueprint|12"|£14.75||https://www.juno.co.uk/products/kerrie-pressure-signal-vinyl/1183545-01/
+J|T|KLINT|Roses & Revolt EP|Planet Rhythm|coloured vinyl 12"|£13.75||https://www.juno.co.uk/products/klint-roses-revolt-ep-vinyl/1175115-01/
+J|T|LACCHESI|Allo Maman Bobo|Mama Told Ya Germany|gatefold clear blue vinyl 2xLP in spot-varnished sleeve|£26.99||https://www.juno.co.uk/products/lacchesi-allo-maman-bobo-vinyl/1179676-01/
+J|T|Matas PETRIKAS|The Unknown|Dange Germany|12" iin embossed spot-varnished sleeve|£15.99||https://www.juno.co.uk/products/matas-petrikas-the-unknown-vinyl/1182443-01/
+J|T|OM THEOREM|Lemma 3|OM Theorem|12"|£14.25||https://www.juno.co.uk/products/om-theorem-lemma-3-vinyl/1189322-01/
+J|T|RHYW|Piranha Pop|Voam|12"|£16.99||https://www.juno.co.uk/products/rhyw-piranha-pop-vinyl/1185451-01/
+J|T|SCOTT GROOVES|OTRC 3|OTRC US|hand-stamped 1-sided 7"|£20.99||https://www.juno.co.uk/products/scott-grooves-otrc-3-vinyl/1188634-01/
+J|T|TENSAL|Asthray EP|Dogma Rec Italy|12"|£16.25||https://www.juno.co.uk/products/tensal-asthray-ep-vinyl/1182445-01/
+J|T|TRANSLATE|Coefficients|Dust In Grooves France|12"|£16.25||https://www.juno.co.uk/products/translate-coefficients-vinyl/1182442-01/
+J|T|Vince WATSON|Introspection II EP|Everysoul|12"|£14.99||https://www.juno.co.uk/products/vince-watson-introspection-ii-ep-vinyl/1184133-01/
+J|T|ZIMA STULECIA|36 6 C|Astigmatic Poland|limited hand-numbered 180 gram vinyl 12"|£24.75||https://www.juno.co.uk/products/zima-stulecia-36-6-c-vinyl/1176985-01/
+R|T|A.k.Adrix|333|Príncipe (P067)||£22.62|In stock|https://www.redeyerecords.co.uk/vinyl/202222-p067-a-k-adrix-333/
+R|T|Aaron Carl|Down|Metroplex (M035)||£14.04|In stock|https://www.redeyerecords.co.uk/vinyl/187354-m035-aaron-carl-down/
+R|T|Adam Rahman, Andrey Pushkarev, Passarani, Rami HR|Nothing Is The Same LP (2x12 Inch)|Techfui (TFUI008)||£20.01|Preorder · 18 Dec|https://www.redeyerecords.co.uk/vinyl/202857-tfui008-adam-rahman-andrey-pushkarev-passarani-rami-hr-nothing-is-the-same-lp-2x12-inch/
+R|T|Akufen|We Shall Not Surrender EP|Onysia (ONYSIA004)||£11.78|Preorder · 18 Dec|https://www.redeyerecords.co.uk/vinyl/202855-onysia004-akufen-we-shall-not-surrender-ep/
+R|T|Al Wootton|Movements For Four Dancers|Trule (TRULE037)||£13.49|Preorder · 27 Nov|https://www.redeyerecords.co.uk/vinyl/202772-trule037-al-wootton-movements-for-four-dancers/
+R|T|Alchemical Sisters|Alchemical Sisters|Interdimensional Transmissions (IT057)||£28.22|In stock|https://www.redeyerecords.co.uk/vinyl/200159-it057-alchemical-sisters-alchemical-sisters/
+R|T|Alex Stein & Victor Ruiz / Charles D & Weska / SCRIPT & OKAYVAL / Martin Costas & Gabriel Gil|DC4 Vol. 4|Drumcode (DC350)||£12.46|Preorder · 21 Nov|https://www.redeyerecords.co.uk/vinyl/199872-dc350-alex-stein-and-victor-ruiz-charles-d-and-weska-script-and-okayval-martin-costas-and-gabriel-gil-dc4-vol-4/
+R|T|ALTINBAS|Beyond The Veil|Ostgut Ton Germany (OTON132)||£16.38|In stock|https://www.redeyerecords.co.uk/vinyl/201379-oton132-altinbas-beyond-the-veil/
+R|T|Amon Tobin|Chaos Theory (20th Anniversary Reissue)|Ninja Tune (ZEN100G)|Transparent Green 140g 2xLP|£31.59|Preorder · 18 Dec|https://www.redeyerecords.co.uk/vinyl/202777-zen100g-amon-tobin-chaos-theory-20th-anniversary-reissue-transparent-green-140g-2xlp-in-plain-black-paper-inner-sleeves-with-holes-wrapped-in-a-large-315x312mm-4-4-poster-which-folds-around-the-inners-contained-in-a-clear-screen-printed-plastic-outer-with-an-opening-at-the-top/
+R|T|Amynedd|16-Bit Adventure|Love Love Records (LOVLP09)|LP|£28.06|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/202336-lovlp09-amynedd-16-bit-adventure/
+R|T|Andy Stott|Late Loop|Modern Love (LOVE154)||£24.57|In stock|https://www.redeyerecords.co.uk/vinyl/200603-love154-andy-stott-late-loop/
+R|T|Aphex Twin|Digeridoo (Expanded Edition) - 2 X 12"|R&s Records (RS9201X)|2x12" Vinyl|£21.06|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/173659-rs9201x-aphex-twin-digeridoo-expanded-edition-2-x-12/
+R|T|Armin Van Buuren & Adam Beyer / D-Shake|Techno Trance / No Mercy|Armada Music / Drumcode (ARMAPRMV006)||£14.02|Out of stock|https://www.redeyerecords.co.uk/vinyl/200996-armaprmv006-armin-van-buuren-and-adam-beyer-d-shake-techno-trance-no-mercy/
+R|T|Armooniaman Aka Lele DJ & Mattia Fabbri|Armoonia|Df Records (DF002)||£11.79|In stock|https://www.redeyerecords.co.uk/vinyl/202010-df002-armooniaman-aka-lele-dj-and-mattia-fabbri-armoonia/
+R|T|Arthur Hnatek|Undertow|Hessle Audio (HES051)||£13.26|In stock|https://www.redeyerecords.co.uk/vinyl/201837-hes051-arthur-hnatek-undertow/
+R|T|ASIS|ASIS Part 3|Wania (WANIA-SIS-3)||£7.91|Preorder · 20 Nov|https://www.redeyerecords.co.uk/vinyl/70331-wania-sis-3-asis-asis-part-3/
+R|T|ATLAS-E|Ancient Electronic Plaza|Digitalo Enterprises (DENT-009)||£7.91|Preorder · 21 Nov|https://www.redeyerecords.co.uk/vinyl/99017-dent-009-atlas-e-ancient-electronic-plaza/
+R|T|Audiotech|Im Your Audio Tech|Metroplex (M053)||£13.15|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/188290-m053-audiotech-im-your-audio-tech/
+R|T|Autechre|Chiastic Slide - 2x12"|Warp (WARPLP49R)||£19.97|In stock|https://www.redeyerecords.co.uk/vinyl/141313-warplp49r-autechre-chiastic-slide-2x12/
+R|T|AWHM, Shugo Noss|PLATES26|Meganesia (MGN013)||£14.52|In stock|https://www.redeyerecords.co.uk/vinyl/201826-mgn013-awhm-shugo-noss-plates26/
+R|T|B12|ELECTRO SOMA - 2x12"|Warp (WARPLP9R)||£28.70|In stock|https://www.redeyerecords.co.uk/vinyl/199351-warplp9r-b12-electro-soma-2x12/
+R|T|BARNT|After Completing The Hex|Magazine Germany (MAGAZINE025LP)||£32.29|In stock|https://www.redeyerecords.co.uk/vinyl/200508-magazine025lp-barnt-after-completing-the-hex/
+R|T|Bart Skils & A.D.H.S|(Untitled)|Drumcode (DC334)||£12.48|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/187430-dc334-bart-skils-and-a-d-h-s/
+R|T|Boards Of Canada|Title Inferno - Black Vinyl|Warp Records (WARPLP496)||£27.46|Out of stock|https://www.redeyerecords.co.uk/vinyl/196490-warplp496-boards-of-canada-title-inferno-black-vinyl/
+R|T|BufoBufo|Irisation|Dream Ticket (DT019)||£13.83|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/199938-dt019-bufobufo-irisation/
+R|T|Buttoncasters Feat. Jimi Tenor / Jimi Tenor & Kabukabu Meets DJ Sotofett|Dose Of K7 / Fujitronic (Rhytmadness Dub)|Resonance Of Dub (RDUB-702)||£5.82|Preorder · 3 Dec|https://www.redeyerecords.co.uk/vinyl/202743-rdub-702-buttoncasters-feat-jimi-tenor-jimi-tenor-and-kabukabu-meets-dj-sotofett-dose-of-k7-fujitronic-rhytmadness-dub/
+R|T|Buzzi|HERON|White Owl Records (ANIMA001)||£15.57|Preorder · 20 Nov|https://www.redeyerecords.co.uk/vinyl/202873-anima001-buzzi-heron/
+R|T|Caramuerto|Una Suerte Nueva|Magia Roja (MR036)||£22.60|Preorder · 6 Dec|https://www.redeyerecords.co.uk/vinyl/202871-mr036-caramuerto-una-suerte-nueva/
+R|T|Cobert & Reshio|Decades Of Wisdom EP|Oman Records (OMAN003)||£11.78|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/202798-oman003-cobert-and-reshio-decades-of-wisdom-ep/
+R|T|Conflux Coldwell|Echolalia|Bulletdodge (BDREC034)||£29.62|Preorder · 30 Nov|https://www.redeyerecords.co.uk/vinyl/202801-bdrec034-conflux-coldwell-echolalia/
+R|T|COSTIN RP|TAKE A TRIP WITH ME|Rawax (RWX026-1)||£11.77|Preorder · 27 Nov|https://www.redeyerecords.co.uk/vinyl/183019-rwx026-1-costin-rp-take-a-trip-with-me/
+R|T|CVBox|Pattern Based On|Uncanny Valley (UV065)||£15.20|In stock|https://www.redeyerecords.co.uk/vinyl/201673-uv065-cvbox-pattern-based-on/
+R|T|D'Arcangelo|Eksel - Silver Vinyl 2LP + OBI Strip|Lapsus Records (LPS-PS20)|Silver Vinyl 2LP|£26.97|In stock|https://www.redeyerecords.co.uk/vinyl/200884-lps-ps20-darcangelo-eksel-silver-vinyl-2lp-obi-strip/
+R|T|DBridge|Curiosity Clicks|Fabriclive. (FL021LP)||£12.46|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/202865-fl021lp-dbridge-curiosity-clicks/
+R|T|Deadbeat|When You're Down EP|Bright Sounds (BSRX020)||£13.71|In stock|https://www.redeyerecords.co.uk/vinyl/201177-bsrx020-deadbeat-when-youre-down-ep/
+R|T|Deenamic|Dub Reflections EP|Syncrophone (SYNCRO65)||£13.89|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/182088-syncro65-deenamic-dub-reflections-ep/
+R|T|Delta Funktionen|Echoes Of Order|Radio Matrix (RAM-X-14)||£12.33|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/187850-ram-x-14-delta-funktionen-echoes-of-order/
+R|T|Demuja|Second Summer|Berg Audio (BERGA11)||£11.78|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/202851-berga11-demuja-second-summer/
+R|T|Derek CARR|Re:Visited|Pariter (PRTR-44)||£14.04|Preorder · 7 Dec|https://www.redeyerecords.co.uk/vinyl/202944-prtr-44-derek-carr-re-visited/
+R|T|Dexter|X7D / Acid Lullaby|Dektreks (DT004)||£12.44|Preorder · 14 Dec|https://www.redeyerecords.co.uk/vinyl/202817-dt004-dexter-x7d-acid-lullaby/
+R|T|Dialog|DOT 1 (Feat. Benji)|Dialog (DOT001)||£14.04|Preorder · 20 Nov|https://www.redeyerecords.co.uk/vinyl/167063-dot001-dialog-dot-1-feat-benji/
+R|T|Dialog|DOT 3 (Feat. Benji)|Dot (DOT003)||£14.04|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/178360-dot003-dialog-dot-3-feat-benji/
+R|T|DJ Honesty|Networks|Blackcat Records (BC005)||£11.79|Preorder · 18 Dec|https://www.redeyerecords.co.uk/vinyl/202946-bc005-dj-honesty-networks/
+R|T|DJRUM|RS1715|R&s (RS1715)||£12.46|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/90315-rs1715-djrum/
+R|T|Dot|Vastness Of Space EP|Depthful (DEPTHFUL003)||£12.46|Preorder · 5 Dec|https://www.redeyerecords.co.uk/vinyl/202835-depthful003-dot-vastness-of-space-ep/
+R|T|DUST|The Spirit|Dust (DST001)||£13.85|In stock|https://www.redeyerecords.co.uk/vinyl/201277-dst001-dust-the-spirit/
+R|T|Exit Safe Mode|Diaspora II|Exit Safe Mode (EXITSAFEMODE09)||£13.51|In stock|https://www.redeyerecords.co.uk/vinyl/201648-exitsafemode09-exit-safe-mode-diaspora-ii/
+R|T|Felix|Don't You Want Me|Groovin Recordings (GR-12147)||£13.21|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/202941-gr-12147-felix-dont-you-want-me/
+R|T|Fiedel, Jonas Xenon & Michael Rosmann|Split Grooves EP|Kias (KIAS004)||£11.78|Preorder · 5 Dec|https://www.redeyerecords.co.uk/vinyl/202843-kias004-fiedel-jonas-xenon-and-michael-rosmann-split-grooves-ep/
+R|T|Florian Kupfer|Lifetrax Vol. 1|Lifetrax (LTX001)||£14.53|Preorder · 7 Dec|https://www.redeyerecords.co.uk/vinyl/202919-ltx001-florian-kupfer-lifetrax-vol-1/
+R|T|Flug|The Time Has Changed|Existentia (EXTV001)||£11.79|Out of stock|https://www.redeyerecords.co.uk/vinyl/200055-extv001-flug-the-time-has-changed/
+R|T|Foreign Material|Pareidolia EP|Space•lab (SPCLAB023)||£14.51|Preorder · 1 Dec|https://www.redeyerecords.co.uk/vinyl/202819-spclab023-foreign-material-pareidolia-ep/
+R|T|Fort Romeau|Hold Up|Romantic Gestures (RGV002)||£11.78|Preorder · 18 Dec|https://www.redeyerecords.co.uk/vinyl/202863-rgv002-fort-romeau-hold-up/
+R|T|Generali Minerali|Other Side EP (Mathew Jonson, Freestyle Man RMXS)|Techfui (TFUI007)||£11.78|Preorder · 18 Dec|https://www.redeyerecords.co.uk/vinyl/202858-tfui007-generali-minerali-other-side-ep-mathew-jonson-freestyle-man-rmxs/
+R|T|Gentes|Tourist EP|Bocas (BOCAS001)||£16.25|In stock|https://www.redeyerecords.co.uk/vinyl/201647-bocas001-gentes-tourist-ep/
+R|T|Gigi Masin|Implodendo in una accecante oscurita' (Pt.1)|13 (SPS25109)||£23.99|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/189089-sps25109-gigi-masin-implodendo-in-una-accecante-oscurita-pt-1/
+R|T|Gorbé|Logarithm|Grab The Groove (GTGDUB001)||£11.78|Preorder · 18 Dec|https://www.redeyerecords.co.uk/vinyl/202845-gtgdub001-gorb%C3%A9-logarithm/
+R|T|Grad_U|Redscale 02|Redscale (RDSCL02RP)||£11.79|In stock|https://www.redeyerecords.co.uk/vinyl/188634-rdscl02rp-grad_u-redscale-02/
+R|T|Groovedeep|Speed Queen EP|Fixed Rhythms (FRS040)||£14.52|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/200856-frs040-groovedeep-speed-queen-ep/
+R|T|Gzardin|May I Say|Sbnr (SBNR002)||£13.03|Preorder · 27 Nov|https://www.redeyerecords.co.uk/vinyl/202788-sbnr002-gzardin-may-i-say/
+R|T|Havantepe|Conform EP|Berg Audio (BERGAMON17)||£11.79|In stock|https://www.redeyerecords.co.uk/vinyl/201221-bergamon17-havantepe-conform-ep/
+R|T|Ibrahim Alfa Jnr|Synchonised Swimming EP|On The Wireless (OTW-01)||£17.14|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/180390-otw-01-ibrahim-alfa-jnr-synchonised-swimming-ep/
+R|T|Infiniti|'the Infiniti Collection' 3xLP|Tresor (TRESOR048X)|3xLP|£28.08|Out of stock|https://www.redeyerecords.co.uk/vinyl/200792-tresor048x-infiniti-the-infiniti-collection-3xlp/
+R|T|J:Kenzo|Concentrate|Artikal Music (ARTKLKZO1)||£14.43|Preorder · 20 Nov|https://www.redeyerecords.co.uk/vinyl/202840-artklkzo1-j-kenzo-concentrate/
+R|T|Javier Marimon|The Future Is Behind (Bas Dobbelaer Remix)|Slippery Yard (SY03)||£14.52|In stock|https://www.redeyerecords.co.uk/vinyl/202005-sy03-javier-marimon-the-future-is-behind-bas-dobbelaer-remix/
+R|T|Jonas Orbiting|Exit Phase EP|Immersive Patterns (IMMPA005)||£11.78|Preorder · 18 Dec|https://www.redeyerecords.co.uk/vinyl/202844-immpa005-jonas-orbiting-exit-phase-ep/
+R|T|Justo Ferreyra|Crisis Nocturna|Maazn (MZN003)||£12.46|Preorder · 6 Dec|https://www.redeyerecords.co.uk/vinyl/202867-mzn003-justo-ferreyra-crisis-nocturna/
+R|T|Kasablanca|Human Learning EP|Armada Music (ARMAPRMV010)||£14.02|Preorder · 18 Dec|https://www.redeyerecords.co.uk/vinyl/202795-armaprmv010-kasablanca-human-learning-ep/
+R|T|Ketch, Barbosa, MZR, Lindsey Herbert, Stephen Disario|SYXTBLCK002|Syxt (SYXTBLCK002)||£11.79|In stock|https://www.redeyerecords.co.uk/vinyl/180633-syxtblck002-ketch-barbosa-mzr-lindsey-herbert-stephen-disario-syxtblck002/
+R|T|Khan|Super-8.11 EP|Daro Recordings (DARO012)||£13.34|Preorder · 5 Dec|https://www.redeyerecords.co.uk/vinyl/202833-daro012-khan-super-8-11-ep/
+R|T|Kike Pravda|Magnetism [printed Sleeve]|Senoid Recordings (SENOID010LP)|LP|£21.42|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/180215-senoid010lp-kike-pravda-magnetism-%5Bprinted-sleeve%5D/
+R|T|Kirill Matveev, Rasmus Hedlund, Tm Shuffle|An Actor Is The Only Person...Who Believes In The Words He Says - PURPLE VINYL VERSION|Vuo Records (VUO14)||£11.79|In stock|https://www.redeyerecords.co.uk/vinyl/188629-vuo14-kirill-matveev-rasmus-hedlund-tm-shuffle-an-actor-is-the-only-personwho-believes-in-the-words-he-says-purple-vinyl-version/
+R|T|Latress, Hendrik Brown, Bruno Lam, Trajano|Sigil Trax Vol I|Sigil Trax (SGT001)||£13.85|In stock|https://www.redeyerecords.co.uk/vinyl/201585-sgt001-latress-hendrik-brown-bruno-lam-trajano-sigil-trax-vol-i/
+R|T|Len Lewis|Paradise People +|Dzungla (DZUN004)||£13.51|In stock|https://www.redeyerecords.co.uk/vinyl/201726-dzun004-len-lewis-paradise-people/
+R|T|M.F.S: Observatory, Ecilo, Confidential Recipe|Modulazione|Observatory (OBM080)||£11.78|Preorder · 5 Dec|https://www.redeyerecords.co.uk/vinyl/202841-obm080-m-f-s-observatory-ecilo-confidential-recipe-modulazione/
+R|T|Marc Feldmann & Dominik André|White Series #4 EP|Subject To Restriction Discs (STRW-IV)||£10.83|Preorder · 20 Nov|https://www.redeyerecords.co.uk/vinyl/192424-strw-iv-marc-feldmann-and-dominik-andr%C3%A9-white-series-4-ep/
+R|T|Marco Passarani Presents F.F.O.M.|Mirage On The Red Land|Swob (SWOB03)||£14.54|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/187002-swob03-marco-passarani-presents-f-f-o-m-mirage-on-the-red-land/
+R|T|Mark Fell|Servitude In Context EP - EP|National Centre For Mark Fell Studies (FELL02)||£17.16|Out of stock|https://www.redeyerecords.co.uk/vinyl/201053-fell02-mark-fell-servitude-in-context-ep-ep/
+R|T|MFÒ|Haunted City EP|Third Landscapes (TLS003)||£11.78|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/201275-tls003-mf%C3%B2-haunted-city-ep/
+R|T|Michael J. Blood|Fixed Fire|Clone Royal Oak (ROYAL066)||£13.14|Preorder · 22 Jan|https://www.redeyerecords.co.uk/vinyl/201802-royal066-michael-j-blood-fixed-fire/
+R|T|Mihnea Rog|Outer Vision|Mad Signal (MAD003)||£12.46|Preorder · 5 Dec|https://www.redeyerecords.co.uk/vinyl/202834-mad003-mihnea-rog-outer-vision/
+R|T|Module One|Hometown II|Fauxpas Musik (FAUXPAS040)||£18.19|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/201970-fauxpas040-module-one-hometown-ii/
+R|T|Mython|Departure|Opus (OPUS004)||£12.32|Preorder · 27 Nov|https://www.redeyerecords.co.uk/vinyl/202820-opus004-mython-departure/
+R|T|Mython, Sicion, Confusion, Nortsch|GTGX001|Grab The Groove (GTGX001)||£11.79|Out of stock|https://www.redeyerecords.co.uk/vinyl/200053-gtgx001-mython-sicion-confusion-nortsch-gtgx001/
+R|T|Nachtwaker|Relay|Enemy Records (ENEMY046)||£12.79|Preorder · 6 Dec|https://www.redeyerecords.co.uk/vinyl/202885-enemy046-nachtwaker-relay/
+R|T|Nathan Homan|Frog Mine|Spectral Bounce (SPEC09)||£13.15|In stock|https://www.redeyerecords.co.uk/vinyl/201085-spec09-nathan-homan-frog-mine/
+R|T|Niagara|Catedral Gótica|Príncipe (P068)||£22.62|In stock|https://www.redeyerecords.co.uk/vinyl/202223-p068-niagara-catedral-g%C3%B3tica/
+R|T|O.M.Theorem|Eruption - 2x12"|O.m.theorem (OMTERUPT)||£22.77|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/187741-omterupt-o-m-theorem-eruption-2x12/
+R|T|Observer|Uncommon Archetypes EP|Observer (OBS002)||£11.79|In stock|https://www.redeyerecords.co.uk/vinyl/198648-obs002-observer-uncommon-archetypes-ep/
+R|T|OCTAVE ONE|BLACK WATER|430 West (4W340)||£10.92|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/54294-4w340-octave-one-black-water/
+R|T|Octave One|The Collective [1989-1998] Deluxe Edition - 4x12"|430 West (4W700300)|4x12" Vinyl|£48.36|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/198112-4w700300-octave-one-the-collective-%5B1989-1998%5D-deluxe-edition-4x12/
+R|T|Oddjob|ODJB01|Oddjob (ODJB01)||£11.92|In stock|https://www.redeyerecords.co.uk/vinyl/201707-odjb01-oddjob-odjb01/
+R|T|PAT/RYK|DBR001|.defaultbox (DBR001)||£9.16|Preorder · 20 Nov|https://www.redeyerecords.co.uk/vinyl/202925-dbr001-pat%7Cryk-dbr001/
+R|T|Paul K & Suciu|Reversed Piracy EP|Kooky Music (KKYV12)||£13.34|Preorder · 5 Dec|https://www.redeyerecords.co.uk/vinyl/202830-kkyv12-paul-k-and-suciu-reversed-piracy-ep/
+R|T|Pedro Capelossi, Stelios Vassiloudis|Phase 313 EP (Pablo Bolivar, Greg Gow RMXS)|Refraction Records (RFCTN43)||£11.78|Preorder · 18 Dec|https://www.redeyerecords.co.uk/vinyl/202862-rfctn43-pedro-capelossi-stelios-vassiloudis-phase-313-ep-pablo-bolivar-greg-gow-rmxs/
+R|T|Perzeptiverdampfkesselqualmtbesinnlich|Posthumaner Rundfunk [GLOW-IN-THE-DARK Special Ed]|Synaptic Cliffs (SC035SC)||£25.50|Preorder · 11 Dec|https://www.redeyerecords.co.uk/vinyl/202913-sc035sc-perzeptiverdampfkesselqualmtbesinnlich-posthumaner-rundfunk-%5Bglow-in-the-dark-special-ed%5D/
+R|T|Perzeptiverdampfkesselqualmtbesinnlich|Posthumaner Rundfunk [w. Two RUSSELL HASWELL Rmxs] Transparent Vinyl With Purple Splatter|Synaptic Cliffs (SC035)||£18.64|Preorder · 11 Dec|https://www.redeyerecords.co.uk/vinyl/202914-sc035-perzeptiverdampfkesselqualmtbesinnlich-posthumaner-rundfunk-%5Bw-two-russell-haswell-rmxs%5D-transparent-vinyl-with-purple-splatter/
+R|T|Randstad|A View From Your Perspective EP|Ferma (FERMAV006)||£12.81|Preorder · 21 Dec|https://www.redeyerecords.co.uk/vinyl/202826-fermav006-randstad-a-view-from-your-perspective-ep/
+R|T|Ray Kajioka, Eddie Hale|Berlin Sessions II|Denude (DND009)||£11.79|Out of stock|https://www.redeyerecords.co.uk/vinyl/201223-dnd009-ray-kajioka-eddie-hale-berlin-sessions-ii/
+R|T|Redshift|For An Early Morning|Psychedelic Renaissance (PSYREN002)||£12.46|Preorder · 5 Dec|https://www.redeyerecords.co.uk/vinyl/202836-psyren002-redshift-for-an-early-morning/
+R|T|Rico Puestel|Reshape The Astrayed!|Exhibition (XBITAHRT1)||£14.53|Preorder · 7 Dec|https://www.redeyerecords.co.uk/vinyl/202910-xbitahrt1-rico-puestel-reshape-the-astrayed!/
+R|T|Roman Lindau, Developer, Stanislav Tolkachev, Myk Derill|Raumgestaltung - The Remixes|Keenness (KEENNESS001)||£11.79|Out of stock|https://www.redeyerecords.co.uk/vinyl/200054-keenness001-roman-lindau-developer-stanislav-tolkachev-myk-derill-raumgestaltung-the-remixes/
+R|T|Roy Of The Ravers / Jerry LaFlim|Acid Avengers 027|Acid Avengers (AAR027)||£12.77|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/167778-aar027-roy-of-the-ravers-jerry-laflim-acid-avengers-027/
+R|T|Sa Pa|Rhythm From Ambient|Dub Techno For Life (DTL002)||£15.12|Preorder · 15 Jan|https://www.redeyerecords.co.uk/vinyl/199827-dtl002-sa-pa-rhythm-from-ambient/
+R|T|Sam Girling|Drive By Strokes / Primrose Mountain|Hessle Audio (HES054)||£11.70|Preorder · 7 Dec|https://www.redeyerecords.co.uk/vinyl/202931-hes054-sam-girling-drive-by-strokes-primrose-mountain/
+R|T|Sansibar|Babylon Brotherhood|Sin Sistema (SINS004)||£14.52|In stock|https://www.redeyerecords.co.uk/vinyl/201649-sins004-sansibar-babylon-brotherhood/
+R|T|Sansibar, Z@P|Presión Atlántica|Mitic Records (MIT001)||£13.84|Preorder · 15 Dec|https://www.redeyerecords.co.uk/vinyl/202809-mit001-sansibar-z@p-presi%C3%B3n-atl%C3%A1ntica/
+R|T|Scan 7|Resurfaced (2026 Reissue) - 2x12"|Tresor (TRESOR121X)|2x12"|£24.57|Out of stock|https://www.redeyerecords.co.uk/vinyl/192273-tresor121x-scan-7-resurfaced-2026-reissue-2x12/
+R|T|Sequence / Structure|Dialog|Dialog Sound (SOUND02)||£14.04|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/199754-sound02-sequence-structure-dialog/
+R|T|Sexo Y Fantasia|Trabajando El Flex|Pinkman (PNKMN059)||£26.17|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/191808-pnkmn059-sexo-y-fantasia-trabajando-el-flex/
+R|T|Singular Sounds|Riva EP|Singular Sounds (SS001)||£11.78|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/202864-ss001-singular-sounds-riva-ep/
+R|T|Somfay|Scala Caelestis [The Window Path]|Goldmin Music (GMNV012)||£15.49|Preorder · 30 Nov|https://www.redeyerecords.co.uk/vinyl/202897-gmnv012-somfay-scala-caelestis-%5Bthe-window-path%5D/
+R|T|Stefan Zovsky|You Know I Dont Feat. Joyce (Andre Kronert Remix)|Odd Even (ODDEVEN096)||£11.79|Preorder · 25 Dec|https://www.redeyerecords.co.uk/vinyl/202947-oddeven096-stefan-zovsky-you-know-i-dont-feat-joyce-andre-kronert-remix/
+R|T|Sylve|Sens Sens|On Board Music (OB-M16)||£13.13|Preorder · 23 Nov|https://www.redeyerecords.co.uk/vinyl/202816-ob-m16-sylve-sens-sens/
+R|T|T.A.M.22|TAM-CX|Futurepast (FPTAM01)||£14.38|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/196669-fptam01-t-a-m-22-tam-cx/
+R|T|Tal Fussman|Got Love EP|Rekids (REKIDS303)||£11.68|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/202847-rekids303-tal-fussman-got-love-ep/
+R|T|Tapan|God Knows|Second Circle (SC026)||£21.18|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/202803-sc026-tapan-god-knows/
+R|T|Teltschik|Red|Edition Teltschik (TTS001)||£11.78|Preorder · 18 Dec|https://www.redeyerecords.co.uk/vinyl/202856-tts001-teltschik-red/
+R|T|Theo Schmitt|Joy|E63 Recordings (E63NR04)||£11.79|Preorder · 18 Dec|https://www.redeyerecords.co.uk/vinyl/202945-e63nr04-theo-schmitt-joy/
+R|T|Tim Reaper|World's End|Hyperdub (HDBLP076)||£24.94|Preorder · 5 Dec|https://www.redeyerecords.co.uk/vinyl/202854-hdblp076-tim-reaper-worlds-end/
+R|T|Troy Vladislavovich|Focus EP|Langeron Records (LANGERON000)||£16.62|Preorder · 11 Dec|https://www.redeyerecords.co.uk/vinyl/202872-langeron000-troy-vladislavovich-focus-ep/
+R|T|Unknown|Angel|Angelus (ANGEL001)||£11.79|Preorder · 25 Dec|https://www.redeyerecords.co.uk/vinyl/202948-angel001-unknown-angel/
+R|T|Uusikylä, TSSRCT Dubs|Moodsurf Vol 2|Vuo Records (VUO17)||£11.79|In stock|https://www.redeyerecords.co.uk/vinyl/202068-vuo17-uusikyl%C3%A4-tssrct-dubs-moodsurf-vol-2/
+R|T|V/A (OFF/GRID, Utroit & K.O.S, Jesica Falaschi, Gockel)|MTB030|Mitsubasa (MTB030)||£12.47|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/202918-mtb030-v-a-off-grid-utroit-and-k-o-s-jesica-falaschi-gockel-mtb030/
+R|T|VA|New Rhythmic Records|New Rhythmic (NRLTD022)||£11.49|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/197981-nrltd022-nrltd022-va-new-rhythmic-records/
+R|T|Various|Meet Some Friends EP|Abou Naïm Records (ABOUNAIM002)||£14.11|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/202779-abounaim002-various-meet-some-friends-ep/
+R|T|Various Artist|DBR010 (2026 Rerelease)|.defaultbox (DBR010)||£9.16|Preorder · 20 Nov|https://www.redeyerecords.co.uk/vinyl/202924-dbr010-various-artist-dbr010-2026-rerelease/
+R|T|Various Artists|DC4 Vol. 3|Drumcode (DC344)||£12.48|Preorder · 20 Nov|https://www.redeyerecords.co.uk/vinyl/197294-dc344-dc4-vol-3-va/
+R|T|Various Artists|BathHouse All Stars Vol.1|Sengiley Wax (BHSV01)||£11.79|In stock|https://www.redeyerecords.co.uk/vinyl/201219-bhsv01-various-artists-bathhouse-all-stars-vol-1/
+R|T|Various Artists|Umami Series I|Arepas Records (AREPAS004)||£11.79|Out of stock|https://www.redeyerecords.co.uk/vinyl/201224-arepas004-various-artists-umami-series-i/
+R|T|Various Artists|Lagoa Trax Vol. 3|Lagoa Trax Records (LAGOATRAX2603)||£14.89|Preorder · 27 Nov|https://www.redeyerecords.co.uk/vinyl/202812-lagoatrax2603-various-artists-lagoa-trax-vol-3/
+R|T|Various Artists|The Meaning Of Time - Remixes|On Board Music (OB-M015)||£14.31|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/198114-ob-m015-various-artists-the-meaning-of-time-remixes/
+R|T|Various Artists|Wah Wah 45s Remixed: Vinyl Specials|Wah Wah 45s (WAHLP037)|2x12" + 7"|£37.44|Preorder · 27 Nov|https://www.redeyerecords.co.uk/vinyl/202790-wahlp037-various-artists-wah-wah-45s-remixed-vinyl-specials-2x12-7/
+R|T|Vase|USIQ EP|Dsp Sound (DSP001)||£13.71|Preorder · 30 Nov|https://www.redeyerecords.co.uk/vinyl/202821-dsp001-vase-usiq-ep/
+R|T|Vid|NRV013|_nrv (NRV013)||£12.46|Preorder · 20 Nov|https://www.redeyerecords.co.uk/vinyl/202800-nrv013-vid-nrv013/
+R|T|Works Of Intent|Our Resting Hearts|Time Passages (TP31)||£15.22|In stock|https://www.redeyerecords.co.uk/vinyl/195632-tp31-works-of-intent-our-resting-hearts/
+R|T|Yonef & Tim Jackiw, Octal Industries|Dub Slices|Kontakt Records (KNT-52)||£11.78|Preorder · 18 Dec|https://www.redeyerecords.co.uk/vinyl/202842-knt-52-yonef-and-tim-jackiw-octal-industries-dub-slices/
+R|T|Étienne De Crécy|Super Discount - 30th Anniversary Edition - Glow In The Dark Artwork 4x10" BOXSET - Black Vinyl|Pixadelic (PXC087LP)|4x10" Boxset|£88.90|Preorder · 18 Dec|https://www.redeyerecords.co.uk/vinyl/202837-pxc087lp-%C3%A9tienne-de-cr%C3%A9cy-super-discount-30th-anniversary-edition-glow-in-the-dark-artwork-4x10-boxset-black-vinyl/
+H|T|Atrice|Default Settings|Ilian Tape ITLP24|Do 12"|€32.00||https://hardwax.com/08066/atrice/default-settings/
+H|T|Backbone|Not So Punk|Mutual Rytm MRX-008|10"|€18.50||https://hardwax.com/89699/backbone/not-so-punk/
+H|T|D.Diggler|Kontakt|Kontakt 051|12"|€16.00||https://hardwax.com/89769/ddiggler/kontakt/
+H|T|Decka|Havoc|Hayes HYSEP69|12"|€16.50||https://hardwax.com/89700/decka/havoc/
+H|T|Dimi Angélis|Night Gallery EP|Modwerks MDWXLP018D|12"|€16.00||https://hardwax.com/07803/dimi-angelis/night-gallery-ep/
+H|T|Giri|Faulty Rover|No Signal 012 (NSG12)|12"|€16.00||https://hardwax.com/07742/giri/faulty-rover/
+H|T|Infiniti|The Infiniti Collection|Tresor 048 X|3x LP|||https://hardwax.com/11673/infiniti/the-infiniti-collection/
+H|T|Ittara, Jonas Xenon|Contrast|Mouche 008|12"|€16.00||https://hardwax.com/89770/ittara-jonas-xenon/contrast/
+H|T|Jeff Mills|Gamma Rays (C.1995)|Axis 131|12"|€17.50||https://hardwax.com/89496/jeff-mills/gamma-rays-c1995/
+H|T|Judas|Di∑rupted EP|Arts ARTSW012|12"|€15.00||https://hardwax.com/08804/judas/dirupted-ep/
+H|T|Klint|Roses & Revolt EP|Planet Rhythm UK BLK 163|12"|€14.50||https://hardwax.com/07846/klint/roses-and-revolt-ep/
+H|T|Krist|Tar 49|Tar Hallow TAR 049|12"|€14.50||https://hardwax.com/89702/krist/tar-49/
+H|T|Maccari|Lea Occhi presents Maccari|DIG Curated 005|12"|€15.00||https://hardwax.com/89698/maccari/lea-occhi-presents-maccari/
+H|T|O.M.Theorem|Lemma3|O.M.Theorem 003|12"|€15.50||https://hardwax.com/89690/omtheorem/lemma3/
+H|T|Ovatow|Phalaenopsis Revisited|Undacurrnt U2000|12"|€19.00||https://hardwax.com/89766/ovatow/phalaenopsis-revisited/
+H|T|Various Artists|Linear Optics|Relativity 0.5|12"|€17.00||https://hardwax.com/07552/various-artists/linear-optics/
+H|T|Various Artists|SYXTBLCK003|Syxt Blck 003|12"|€16.00||https://hardwax.com/89774/various-artists/syxtblck003/
+C|T|Alarico|Klockworks 42|Klockworks|12"|||https://clone.nl/item85436.html
+C|T|Foobar|Shifting Phases|Wax Rotterdam|12"|||https://clone.nl/item85006.html
+C|T|Hodge|Magenta Glow EP|Interdimensional Transmissions|EP|||https://clone.nl/item84867.html
+C|T|Infiniti|The Infiniti Collection|Tresor|3LP + Download|||https://clone.nl/item84874.html
+C|T|Jeff Mills|Gamma Rays (c.1995)|Axis|12"|||https://clone.nl/item85136.html
+C|T|Juan Atkins|Back To Basics Part 1|Metroplex|12"|||https://clone.nl/item84569.html
+C|T|Marcel Dettmann|My Own Shadow: Album|!K7|2LP|||https://clone.nl/item85088.html
+C|T|Robert Hood|Red Passion I|M-plant|12"|||https://clone.nl/item85016.html
+C|T|Santiago Salazar|Bespoke Electronics EP|Cyphon Records|EP|||https://clone.nl/item85299.html
+B|T|4Real|4RR002|||||https://4real-records.bandcamp.com/album/4rr002/
+B|T|Al Wootton|Movements For Four Dancers|||||https://alwootton.bandcamp.com/album/movements-for-four-dancers/
+B|T|Alex York|Three Hours: Coercion|||||https://alexyork.bandcamp.com/album/three-hours-coercion/
+B|T|Andrea Dama|Zero Networks|||||https://andreadamamusic.bandcamp.com/album/zero-networks/
+B|T|Bruno Caro|X MOD|||||https://tmmrecords.bandcamp.com/album/x-mod/
+B|T|Cult Collective|CC ATOM 1010|||||https://cult-collective.bandcamp.com/album/cc-atom-1010/
+B|T|FUKHED|The Most Complex Machine|||||https://fukhed.bandcamp.com/album/the-most-complex-machine/
+B|T|Gary Beck|Zone X EP|||||https://wargrecords.bandcamp.com/album/zone-x-ep/
+B|T|Gecko|GECKO2026|||||https://dbh-music.bandcamp.com/album/gecko2026/
+B|T|Giuliano Scarola|Out of Range (Remaster 2026)|||||https://giulianoscarola.bandcamp.com/album/out-of-range-remaster-2026/
+B|T|INSIK|TRIGRAMS|||||https://insik.bandcamp.com/album/trigrams/
+B|T|KOOkY|METHEXIS 01|||||https://methexisrecordings.bandcamp.com/album/kooky-methexis-01/
+B|T|LAU|HELD|||||https://laumusikk.bandcamp.com/album/held/
+B|T|Lis Sarroca|RAWAX030LTD|||||https://dbh-music.bandcamp.com/album/rawax030ltd/
+B|T|LochHaven|VSR005: brief glimpses of beauty|||||https://specialspeciesrecords.bandcamp.com/album/vsr005-lochhaven-brief-glimpses-of-beauty/
+B|T|Mazreku|Mindfloor|||||https://gatedrecordings.bandcamp.com/album/mindfloor/
+B|T|Motech|Robert Hood, DJ 3000, Truncate, Gerome Sportelli|||||https://motech.bandcamp.com/album/robert-hood-dj-3000-truncate-gerome-sportelli-2/
+B|T|Mourne, M-Zine|Ledger by M-Zine|||||https://subspacebirmingham.bandcamp.com/album/ledger-by-m-zine/
+B|T|Overload Liverpool|OVRLPL003|||||https://overloadliverpool.bandcamp.com/album/ovrlpl003/
+B|T|SHMIKESSS|Equanimity|||||https://shmikesss.bandcamp.com/album/equanimity/
+B|T|The Black Dog|In The North|||||https://duststoredigital.com/album/in-the-north
+B|T|Various Artists|Ficciones V - Pt. 1 & 2|||||https://amancaymusica.bandcamp.com/album/ficciones-v-pt-1-2/
+H|M|Anselmo & Benjamin|Do It|Canicule Musique 006|12"|€16.00||https://hardwax.com/89772/anselmo-and-benjamin/do-it/
+H|M|Armooniaman|Armoonia|Df 002|12"|€16.00||https://hardwax.com/89771/armooniaman/armoonia/
+H|M|Rhyw|Piranha Pop|Voam VOAM014|12"|€19.00||https://hardwax.com/89587/rhyw/piranha-pop/
+C|M|Edward|Familiar Feeling|Giegling|EP|||https://clone.nl/item83742.html
+C|M|T.C.O.|NESREH003|Nesreh|12"|||https://clone.nl/item84706.html
+B|M|11:68PM|Craft Services 003 (CRAFT003)|||||https://1168pm.bandcamp.com/album/craft-services-003-craft003/
+B|M|Ayo|Emotional Overload EP (KQT004)|||||https://kumquatrecordsfr.bandcamp.com/album/ayo-emotional-overload-ep-kqt004/
+B|M|Booka Shade|Movements (20th Anniversary Super Deluxe Edition)|||||https://bookashade.bandcamp.com/album/movements-20th-anniversary-super-deluxe-edition/
+B|M|Demi Riquísimo|DISC 1 - SEMID028 - Cafe Gelato|||||https://demiriquisimo.bandcamp.com/album/disc-1-semid028-cafe-gelato/
+B|M|Lost Preset|Let me talk to the DJ|||||https://antinoterecordings.bandcamp.com/album/let-me-talk-to-the-dj/
+B|M|Noiro|Repeat The Beat EP (KQT003)|||||https://kumquatrecordsfr.bandcamp.com/album/noiro-repeat-the-beat-ep-kqt003/
+B|M|Purple Print|Masupilami - Nothing Is Really Artificial EP|||||https://memoriarecords.bandcamp.com/album/masupilami-nothing-is-really-artificial-ep-vinyl-only/
+B|M|Rick Silver|Value Pack EP|||||https://uzmi.bandcamp.com/album/rick-silver-value-pack-ep/
+B|M|Trip Shrubb|NÜJJE!|||||https://peaceland.bandcamp.com/album/n-jje/
+B|M|Tripmastaz, Santos|Combinazione EP [RTCE05]|||||https://tripmastaz.bandcamp.com/album/santos-tripmastaz-combinazione-ep-rtce05-digital-vinyl/
+B|M|Various Artists|MTB030|||||https://mitsubasa.bandcamp.com/album/mtb030/
+B|M|Wex|Sleeper 002|||||https://wexrecords.bandcamp.com/album/sleeper-002/
+J|D|AND IF / LUCIANO / MICHEL CLEIS / FEDERICO BARACO / BLUE MONDAYS|Rebirth 20|Rebirth|12"|£14.99||https://www.juno.co.uk/products/and-if-luciano-michel-cleis-federico-rebirth-20-vinyl/1187381-01/
+J|D|CERI|Love Me Right EP|Find Your Own|12"|£12.75||https://www.juno.co.uk/products/ceri-love-me-right-ep-vinyl/1190237-01/
+J|D|CHIP E|The Architect Of House: Chicago 1984-88 Volume 2: Unreleased Jack|Still Music UK|2xLP + insert|£35.75||https://www.juno.co.uk/products/chip-e-the-architect-of-house-chicago-1984-vinyl/1185296-01/
+J|D|Chris LUM|The Custodian Chapter 1|Moulton Music US|12"|£14.99||https://www.juno.co.uk/products/chris-lum-the-custodian-chapter-1-vinyl/1183285-01/
+J|D|Damon LAMAR / SPECTER / JOSE RICO / LEONID|Slow & Steady|Downbeat Spain|hand-stamped 12"|£14.50||https://www.juno.co.uk/products/damon-lamar-specter-jose-rico-leonid-slow-steady-vinyl/1186251-01/
+J|D|DJ SLUGO / BEET WORLDWIDE / SCHWEPPES|The Block Party EP|Miami Beats US|12"|£18.25||https://www.juno.co.uk/products/dj-slugo-beet-worldwide-the-block-party-ep-vinyl/1189927-01/
+J|D|Felipe GORDON|The Multicolor EP|Star Creature US|12"|£21.50||https://www.juno.co.uk/products/felipe-gordon-the-multicolor-ep-vinyl/1188718-01/
+J|D|KEPLER|Sunday Service EP|Fuse London|12" in die-cut sleeve|£14.99||https://www.juno.co.uk/products/kepler-sunday-service-ep-vinyl/1187163-01/
+J|D|Malik KASSIM / CEM MO|Breaking Cloud EP|Cataleya Music Sweden|12"|£14.50||https://www.juno.co.uk/products/malik-kassim-cem-mo-breaking-cloud-ep-vinyl/1186245-01/
+J|D|Marcus RAUTE|Source Code Memory|Neo Life Italy|180 gram vinyl 12"|£15.75||https://www.juno.co.uk/products/marcus-raute-source-code-memory-vinyl/1174524-01/
+J|D|ORANGE SHADOW|M25|Orange Shadow|12"|£14.50||https://www.juno.co.uk/products/orange-shadow-m25-vinyl/1176683-01/
+J|D|POINT SOLE|Got Real Love EP|Kick Cuts Spain|12"|£16.75||https://www.juno.co.uk/products/point-sole-got-real-love-ep-vinyl/1189934-01/
+J|D|Sam ALFRED|No More EP|Technicolour|12"|£19.99||https://www.juno.co.uk/products/sam-alfred-no-more-ep-vinyl/1185956-01/
+J|D|TESSUB|Spells|Tri US|12"|£13.50||https://www.juno.co.uk/products/tessub-spells-vinyl/1161644-01/
+J|D|The ROBINSON|Invisible Man|Deeper Groove|12"|£15.50||https://www.juno.co.uk/products/the-robinson-invisible-man-vinyl/1187167-01/
+J|D|The RURALS|Deepest Rurals EP|Peng|12" repress|£14.99||https://www.juno.co.uk/products/the-rurals-deepest-rurals-ep-vinyl/1163935-01/
+J|D|The TWILITE TONE|Joy|Star Creature US|7"|£19.25||https://www.juno.co.uk/products/the-twilite-tone-joy-vinyl/1188729-01/
+J|D|TINO|Super Hot EP|M.A.D|heavyweight vinyl 12" repress|£15.50 (also at Redeye)||https://www.juno.co.uk/products/tino-super-hot-ep-vinyl/1175387-01/
+J|D|TOMOS|Cycles|Noire & Blanche France|12"|£25.50||https://www.juno.co.uk/products/tomos-cycles-vinyl/1177356-01/
+J|D|VARIOUS|APT 9 Recordings Vol III|APT 9|3xLP|£52.75||https://www.juno.co.uk/products/apt-9-recordings-vol-iii-vinyl/1173932-01/
+J|D|WESTCOAST GODDESS|Happy Planet|Chiwax Germany|12"|£14.25||https://www.juno.co.uk/products/westcoast-goddess-happy-planet-vinyl/1151052-01/
+H|D|Arkajo|Incandescence|Aniara 036|12"|€18.50||https://hardwax.com/89481/arkajo/incandescence/
+H|D|Byron The Aquarius|Last Dance In Church|Collect 004|12"|€17.00||https://hardwax.com/89765/byron-the-aquarius/last-dance-in-church/
+H|D|Various Artists|Moodsurf Vol 2|Vuo 017|12"|€16.00||https://hardwax.com/89773/various-artists/moodsurf-vol-2/
+C|D|Dubtribe Sound System|Selene Songs|Forever Records|2LP|||https://clone.nl/item84721.html
+C|D|Insane Who Sane|Don't Leave Me EP|House of Wadjet|12"|||https://clone.nl/item85184.html
+C|D|Larry Heard|Ice Castles|Alleviated|2LP|||https://clone.nl/item84725.html
+C|D|Loidis|From The Toolkit Of Lovers|Incienso|3LP|||https://clone.nl/item84934.html
+C|D|Michael J. Blood|Fixed Fire|Clone Royal Oak|12"|||https://clone.nl/item85130.html
+C|D|Simoncino|Back To The Club EP|All Nice Records|12"|||https://clone.nl/item85215.html
+C|D|Various Artists|The Ron Trent Collection Vol. 2|Nite Grooves|12"|||https://clone.nl/item84318.html
+C|D|Volkan|planet kotti|Giegling|EP|||https://clone.nl/item83745.html
+B|D|Bertie Bassett|Let's Party EP|||||https://bertiebassettdj.bandcamp.com/album/lets-party-ep/
+B|D|DJ PEPER|Do the Job|||||https://sofamovementsrecords.bandcamp.com/album/do-the-job/
+B|D|Giuliano Scarola|Road to Trip (Remaster 2026)|||||https://giulianoscarola.bandcamp.com/album/road-to-trip-remaster-2026/
+B|D|HIROSHI WATANABE|TAKACHIHO EP|||||https://moltensoulrecords.bandcamp.com/album/takachiho-ep/
+B|D|John Manhard|A Summer In Pine Creek LP [MUIMUI005]|||||https://muimuirecords.bandcamp.com/album/a-summer-in-pine-creek-lp-muimui005/
+B|D|Kiko Navarro feat. Dele Sosimi & Lizzy Dosunmu|Ire Gbo Gbo EP|||||https://kikonavarro.bandcamp.com/album/ire-gbo-gbo-ep/
+B|D|Malik Hendricks|Ten Toes Down EP - VP015|||||https://creativeissues.bandcamp.com/album/ten-toes-down-ep-vp015/
+B|D|NOREASONWHY|Displaced Frog EP|||||https://noreasonwhy-ofc.bandcamp.com/album/displaced-frog-ep/
+B|D|Omid 16B|Triggered Memories 2|||||https://alolarecords.bandcamp.com/album/triggered-memories-2/
+B|D|Simone De Kunovich, Ferrari|Mysterious G|||||https://polifonic.bandcamp.com/album/mysterious-g/
+B|D|Various Artists (Glenn Davis / Hitch.93 / Sangwoo)|Mo' Dubz Vol. 2|||||https://phutureshockmusik.bandcamp.com/album/mo-dubz-vol-2/
+R|H|11:68PM|Craft Services 003|Craft Services (CRAFT003)||£11.78|Preorder · 11 Dec|https://www.redeyerecords.co.uk/vinyl/202926-craft003-11-68pm-craft-services-003/
+R|H|Ak'Chamel, The Giver Of Illness|The Totemist|Akuphone (AKULP1023)||£30.89|Preorder · 18 Dec|https://www.redeyerecords.co.uk/vinyl/202905-akulp1023-akchamel-the-giver-of-illness-the-totemist/
+R|H|Alan Braxe & Fred Falke|Intro (25th Anniversary)|Domino (SMGLR924T)||£17.53|Out of stock|https://www.redeyerecords.co.uk/vinyl/191626-smglr924t-alan-braxe-and-fred-falke-intro-25th-anniversary/
+R|H|Alfonso Bottone|At The Lido Calypso EP|Yore (YRE-012LTD)||£18.64|Preorder · 11 Dec|https://www.redeyerecords.co.uk/vinyl/202909-yre-012ltd-alfonso-bottone-at-the-lido-calypso-ep/
+R|H|Andrea Natali, Funksonik, Diego Adelante, Bass Cab|Berlin Pisa|Cabinet Records (CAB71)||£11.79|In stock|https://www.redeyerecords.co.uk/vinyl/201212-cab71-andrea-natali-funksonik-diego-adelante-bass-cab-berlin-pisa/
+R|H|ANF|Costly Blooms On The Eve Of Collapse|Dust World (DWLD006)||£13.15|Preorder · 29 Jan|https://www.redeyerecords.co.uk/vinyl/164895-dwld006-anf-costly-blooms-on-the-eve-of-collapse/
+R|H|ANF|Mauna Kea EP|Dust World (DWLD007)||£13.15|Preorder · 29 Jan|https://www.redeyerecords.co.uk/vinyl/187265-dwld007-anf-mauna-kea-ep/
+R|H|Aruba, Darran Nugent|Soundz From My Stereo|Sleight Of Hand (SOH-01)||£12.72|Preorder · 20 Nov|https://www.redeyerecords.co.uk/vinyl/196030-soh-01-aruba-darran-nugent-soundz-from-my-stereo/
+R|H|Baby Ford, Tom Ellis|Brainstew|Logistic Records (LOG91)||£13.85|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/197019-log91-baby-ford-tom-ellis-brainstew/
+R|H|Bertie Bassett|Let's Party Ep|Bertie Bassett (BBS002V)||£12.86|Preorder · 3 Dec|https://www.redeyerecords.co.uk/vinyl/202882-bbs002v-bertie-bassett-lets-party-ep/
+R|H|Berwick|Son Of Stan EP|Private Parts (PRIVATEPARTS010)|Vinyl (EP)|£13.85|In stock|https://www.redeyerecords.co.uk/vinyl/198301-privateparts010-berwick-son-of-stan-ep/
+R|H|Biesmans|Moments Of Rapture|Muem Records (MUEM007)||£28.25|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/202917-muem007-biesmans-moments-of-rapture/
+R|H|Biesmans, Rosa Red, HalfPint, Ben Evers, Najeh|Café Soda Selects Volume Two|Café Soda Records (CS002)||£11.78|Preorder · 27 Nov|https://www.redeyerecords.co.uk/vinyl/202849-cs002-biesmans-rosa-red-halfpint-ben-evers-najeh-caf%C3%A9-soda-selects-volume-two/
+R|H|Black Joker|Outer Planetary Oasis|Pacific City Discs (PCD016)||£20.26|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/202901-pcd016-black-joker-outer-planetary-oasis/
+R|H|BLUELESS|TAR LIOM EP|Dream Dancing (DD005)||£13.65|Preorder · 20 Nov|https://www.redeyerecords.co.uk/vinyl/197375-dd005-blueless-tar-liom-ep/
+R|H|BLUELESS|WITHIN WITHOUT EP|Dream Dancing (DD006)||£13.65|Preorder · 20 Nov|https://www.redeyerecords.co.uk/vinyl/197376-dd006-blueless-within-without-ep/
+R|H|Bonobo|Distance In Static|Ninja Tune (ZEN328N)|2LP Vinyl, Indies Pastel Blue 140g|£26.32|In stock|https://www.redeyerecords.co.uk/vinyl/198133-zen328n-bonobo-distance-in-static-indies-pastel-blue-140g-vinyl-2lp-housed-in-a-6mm-spined-sleeve-with-printed-inners-art-paper-insert-and-artwork-postcards-design-and-art-direction-by-trevor-jackson-includes-mp3-download-code/
+R|H|Bruno Pronsato|Set Up The Rows EP|Kooky Music (KKYV11)||£12.19|Preorder · 5 Dec|https://www.redeyerecords.co.uk/vinyl/202813-kkyv11-bruno-pronsato-set-up-the-rows-ep/
+R|H|CC:DISCO!|Prize Winning Horse EP|Phantasy Sound (PH158)|Vinyl (EP)|£12.46|Preorder · 11 Dec|https://www.redeyerecords.co.uk/vinyl/202877-ph158-cc-disco!-prize-winning-horse-ep/
+R|H|Chaos In The CBD & Friends|Chaos In The CBD & Friends|Neroli (NERO047)||£10.64|Preorder · 27 Nov|https://www.redeyerecords.co.uk/vinyl/117264-nero047-chaos-in-the-cbd-and-friends/
+R|H|Children Of The Sun|Tidal Disruption|Children Of The Sun (COTS002)||£13.84|Preorder · 27 Nov|https://www.redeyerecords.co.uk/vinyl/186941-cots002-children-of-the-sun-tidal-disruption/
+R|H|CID / Dances / Audiojack / Low Steppa / Alaia & Gallo|Toolroom Trax Sampler Vol. 7|Toolroom Trax (TRXVS007)||£12.87|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/199828-trxvs007-cid-dances-audiojack-low-steppa-alaia-and-gallo-toolroom-trax-sampler-vol-7/
+R|H|Circus Operandi|CFV001|Customs & Faces (CFV001)||£13.15|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/192894-cfv001-circus-operandi-cfv001/
+R|H|Costin Rp|Full Of Surprises EP|Hypnodose (HYPN003)||£6.80|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/192920-hypn003-costin-rp-full-of-surprises-ep/
+R|H|Costin Rp|Sound TRack Of My Life Part 1|Rawax (RWX026)||£12.23|Preorder · 27 Nov|https://www.redeyerecords.co.uk/vinyl/177999-rwx026-costin-rp-sound-track-of-my-life-part-1/
+R|H|Dan Goul|Paraglider|Berg Audio (BERGA07)||£11.79|Out of stock|https://www.redeyerecords.co.uk/vinyl/179020-berga07-dan-goul-paraglider/
+R|H|Debbie Trusty|Searchin' For Some Lovin'|Be With Records (BEWITH026TWELVE)||£21.06|Preorder · 5 Dec|https://www.redeyerecords.co.uk/vinyl/202824-bewith026twelve-debbie-trusty-searchin-for-some-lovin/
+R|H|Dino Lenny|I'm Failing To Lie|Crosstown Rebels (CRM365)||£11.68|Preorder · 27 Nov|https://www.redeyerecords.co.uk/vinyl/202846-crm365-dino-lenny-im-failing-to-lie/
+R|H|DJ Jauche|Nachtboutique - Dirty Nights And Boogie Lights Pt. 2 / Lim.Repress|Flaneurecordings (FR002)||£10.41|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/202923-fr002-dj-jauche-nachtboutique-dirty-nights-and-boogie-lights-pt-2-lim-repress/
+R|H|DJ Soch|Dont'me Cry EP|Chiwax (CHIWAX038-3)||£13.16|Preorder · 5 Dec|https://www.redeyerecords.co.uk/vinyl/202852-chiwax038-3-dj-soch-dontme-cry-ep/
+R|H|Don Carlos|Alone|Anorax Records (A004)||£12.48|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/177062-a004-don-carlos-alone/
+R|H|Ed Herbst|SPRING EP (PHAZER RMX)|Cabinet (CAB63)||£11.79|In stock|https://www.redeyerecords.co.uk/vinyl/159353-cab63-ed-herbst-spring-epphazer-rmx/
+R|H|Elbarto|Whip Checks|Ec2a (OPM010)||£13.26|Out of stock|https://www.redeyerecords.co.uk/vinyl/188865-opm010-elbarto-whip-checks/
+R|H|ESB|Sleeper 002|Sleeper (SLEEPER002)||£15.22|In stock|https://www.redeyerecords.co.uk/vinyl/200615-sleeper002-esb-sleeper-002/
+R|H|Existencia Pasajera|PRZ10ten|Prozpektiva (PRZ10TEN)||£13.72|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/183011-prz10ten-existencia-pasajera-prz10ten/
+R|H|Far&High|Coda EP|Unheard Music (UNHEARD003)||£11.79|Out of stock|https://www.redeyerecords.co.uk/vinyl/200051-unheard003-farandhigh-coda-ep/
+R|H|Fauxplay & Anthony Pappa|Forever Seeking EP|Early Morning (EARLY012)||£14.61|Preorder · 20 Nov|https://www.redeyerecords.co.uk/vinyl/198437-early012-fauxplay-and-anthony-pappa-forever-seeking-ep/
+R|H|Flabbergast|L'heure Des Castors EP|Onysia (ONYSIA015)||£11.78|Preorder · 25 Dec|https://www.redeyerecords.co.uk/vinyl/202853-onysia015-flabbergast-lheure-des-castors-ep/
+R|H|Fort Romeau|Be With U|Romantic Gestures (RGV001)||£11.79|Out of stock|https://www.redeyerecords.co.uk/vinyl/200052-rgv001-fort-romeau-be-with-u/
+R|H|Fred P & Slikk Tim|Soul Awakening|Collective Resource Inc. (CR001A)||£11.70|Preorder · 27 Nov|https://www.redeyerecords.co.uk/vinyl/202934-cr001a-fred-p-and-slikk-tim-soul-awakening/
+R|H|Gary´s Garage|Gary´s Steak Baked Garage Bakes EP|Garys Garage (GARY02)||£13.26|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/183870-gary02-gary%C2%B4s-garage-gary%C2%B4s-steak-baked-garage-bakes-ep/
+R|H|Gianni Cerri|Velvet Surface|Seance Audio (SA003)||£13.34|Preorder · 5 Dec|https://www.redeyerecords.co.uk/vinyl/202828-sa003-gianni-cerri-velvet-surface/
+R|H|Ginno & Onoffon|Cervical EP|Ecolecua (ECO001)|Vinyl (EP)|£6.46|Preorder · 20 Nov|https://www.redeyerecords.co.uk/vinyl/185590-eco001-ginno-and-onoffon-cervical-ep/
+R|H|Glenn Davis|A New Day EP|Ascension On Wax (AOW007)||£15.90|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/202927-aow007-glenn-davis-a-new-day-ep/
+R|H|Guilherme Arantes|Cheia De Charme (Spiller Remixes)|Nano Records (NANO021)||£12.87|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/202907-nano021-guilherme-arantes-cheia-de-charme-spiller-remixes/
+R|H|Guy From Downstairs, Elia Nafzger|50/50|Gfd (GFD011)||£11.79|In stock|https://www.redeyerecords.co.uk/vinyl/184758-gfd011-guy-from-downstairs-elia-nafzger-50-50/
+R|H|Handzfree, Fred Quest, Harry Wills, Footwork Honey|U Like Bass|Deviantix (DVX001)||£11.79|In stock|https://www.redeyerecords.co.uk/vinyl/199194-dvx001-handzfree-fred-quest-harry-wills-footwork-honey-u-like-bass/
+R|H|HIGHRISE|Lost N Found EP|Reptile Mob (REPEP-02)||£12.46|Out of stock|https://www.redeyerecords.co.uk/vinyl/196515-repep-02-highrise-lost-n-found-ep/
+R|H|Hot Natured & Ali Love|HOTC025|Hot Creations (HOTC025)||£11.70|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/35857-hotc025-hot-natured-and-ali-love/
+R|H|Ilario Liburni|The Force EP|Cardinal Records (CAR016)||£13.34|Preorder · 5 Dec|https://www.redeyerecords.co.uk/vinyl/202827-car016-ilario-liburni-the-force-ep/
+R|H|Ilija Rudman|Danceteria (Charles Webster Mixes)|Imogen Recordings (IMO021)||£14.53|Preorder · 20 Nov|https://www.redeyerecords.co.uk/vinyl/202920-imo021-ilija-rudman-danceteria-charles-webster-mixes/
+R|H|Iz & Diz|Mouth|Classic (CMC065RMX2)||£12.46|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/198923-cmc065rmx2-iz-and-diz-mouth/
+R|H|Jacksonville|Heavy & Gold|Stay Underground It Pays (SUIT16)||£12.26|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/195794-suit16-jacksonville-heavy-and-gold/
+R|H|Jacksonville|Nightcode EP|Phonogramme (PHONOGRAMME77)||£14.33|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/195664-phonogramme77-jacksonville-nightcode-ep/
+R|H|Jay Duncan|Diva Syntax|Adonis Records (ADONIS004)||£14.57|Out of stock|https://www.redeyerecords.co.uk/vinyl/202174-adonis004-jay-duncan-diva-syntax/
+R|H|Jesse You & Baso|Dissociative Immersion|Plasticity (PLAS002)||£12.46|Preorder · 6 Dec|https://www.redeyerecords.co.uk/vinyl/202868-plas002-jesse-you-and-baso-dissociative-immersion/
+R|H|Joe Claussell Presents Praise With Twinkie Clark|Jesus, I'll Never Forget / I Am Love Remix|Praise (PRAISE-56)||£31.18|In stock|https://www.redeyerecords.co.uk/vinyl/202354-praise-56-joe-claussell-presents-praise-with-twinkie-clark-jesus-ill-never-forget-i-am-love-remix/
+R|H|Jorge Watts, Daniel Treloar|Just Can't Get Enough|Freak Division (FDR001)||£11.79|In stock|https://www.redeyerecords.co.uk/vinyl/201937-fdr001-jorge-watts-daniel-treloar-just-cant-get-enough/
+R|H|Just Benedict|Just Benedict|Benedict (BENE005)||£13.65|Preorder · 6 Dec|https://www.redeyerecords.co.uk/vinyl/202892-bene005-just-benedict/
+R|H|Kenix Featuring Bobby Youngblood|There's Never Been (No One Like You)|Be With Records (BEWITH027TWELVE)|Vinyl (12")|£21.06|Preorder · 5 Dec|https://www.redeyerecords.co.uk/vinyl/202823-bewith027twelve-kenix-featuring-bobby-youngblood-theres-never-been-no-one-like-you/
+R|H|Kenneth Graham|In This House|Seven Villas Music (7V216)||£13.47|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/197773-7v216-kenneth-graham-in-this-house/
+R|H|KERRI CHANDLER|NE20136|Nervous Records (NE20136)||£11.70|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/101967-ne20136-kerri-chandler/
+R|H|KNOWONE|KNWN6.5|Knwn (KNWN6-5)||£11.79|In stock|https://www.redeyerecords.co.uk/vinyl/181879-knwn6-5-knowone-knwn6-5/
+R|H|Love Club|Hot Summer Nights|Be With Records (BEWITH025TWELVE)||£21.06|Preorder · 5 Dec|https://www.redeyerecords.co.uk/vinyl/202822-bewith025twelve-love-club-hot-summer-nights/
+R|H|Lucas Moinet|Vert Emeraude EP|Kick'n'dance (KICKNDANCE003)|Vinyl (EP)|£11.95|Preorder · 27 Nov|https://www.redeyerecords.co.uk/vinyl/198251-kickndance003-lucas-moinet-vert-emeraude-ep/
+R|H|Marko Nastic & Bosko Balos Present Mooshoo Clan|A Journey To Hyperspace Pt. 2|Easy Tiger (ET006-2)||£15.54|Preorder · 5 Dec|https://www.redeyerecords.co.uk/vinyl/202815-et006-2-marko-nastic-and-bosko-balos-present-mooshoo-clan-a-journey-to-hyperspace-pt-2/
+R|H|Module One, RFL, Leafar Legov|Sundays EP|Luck Of Access (LOA009)||£11.79|In stock|https://www.redeyerecords.co.uk/vinyl/193199-loa009-module-one-rfl-leafar-legov-sundays-ep/
+R|H|MOOD II SWING|DO IT YOUR WAY|Groove On (GO42)||£10.90|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/51190-go42-mood-ii-swing-do-it-your-way/
+R|H|Motorbass|Pansoul|Pixadelic (PXC082LP)||£36.27|Preorder · 18 Dec|https://www.redeyerecords.co.uk/vinyl/202838-pxc082lp-motorbass-pansoul/
+R|H|Move D|House Grooves Vol. 1|All That Jelly (ATJ008)||£15.22|Preorder · 27 Nov|https://www.redeyerecords.co.uk/vinyl/129875-atj008-move-d-house-grooves-vol-1/
+R|H|Muster Men|Shattering The Shutters EP|Art Of Dark (AOD020)||£12.48|Out of stock|https://www.redeyerecords.co.uk/vinyl/188172-aod020-muster-men-shattering-the-shutters-ep/
+R|H|Natebytheway & Duncan Thomas|Keep Me Waiting EP|Kooky Music (CNTRL01)|Vinyl (EP)|£13.82|Preorder · 6 Dec|https://www.redeyerecords.co.uk/vinyl/202866-cntrl01-natebytheway-and-duncan-thomas-keep-me-waiting-ep/
+R|H|Nice Girl|Call Me Nice Girl|Public Possession (PP131)||£12.47|Preorder · 7 Dec|https://www.redeyerecords.co.uk/vinyl/202915-pp131-nice-girl-call-me-nice-girl/
+R|H|Oliver Dollar|Doin' Ya Thang|Defected (DFTD723)||£12.48|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/193079-dftd723-oliver-dollar-doin-ya-thang/
+R|H|Oliver Koletzki & Retro/Grade|Zoid|Stil Vor Talent (SVT432EP)||£13.15|Preorder · 11 Dec|https://www.redeyerecords.co.uk/vinyl/202912-svt432ep-oliver-koletzki-and-retro-grade-zoid/
+R|H|Pancratio|Automatic Houseb - 2x12"|Faith Beat (FAITHBEAT-12)|Vinyl (2x12")|£25.60|Preorder · 18 Dec|https://www.redeyerecords.co.uk/vinyl/186455-faithbeat-12-pancratio-automatic-houseb-2x12/
+R|H|Peter Zherebtsov, Vid, Herck|Hive Minded EP|Utro Records (UTROWAX001)||£11.79|In stock|https://www.redeyerecords.co.uk/vinyl/195474-utrowax001-peter-zherebtsov-vid-herck-hive-minded-ep/
+R|H|Philipp KOLBE|The Hill EP|Kompakt Germany (KOMPAKT511)||£13.26|Preorder · 20 Nov|https://www.redeyerecords.co.uk/vinyl/202906-kompakt511-philipp-kolbe-the-hill-ep/
+R|H|Power Squad|POWER001|Power (POWER001)||£11.78|Preorder · 18 Dec|https://www.redeyerecords.co.uk/vinyl/202860-power001-power-squad-power001/
+R|H|Priori|SCN EP|Dust World (DWLD004)||£13.15|Preorder · 29 Jan|https://www.redeyerecords.co.uk/vinyl/122345-dwld004-priori-scn-ep/
+R|H|Rahaan|MothaFunka Connection|Typewriter Record Pool (TYPE05)||£16.36|In stock|https://www.redeyerecords.co.uk/vinyl/200060-type05-rahaan-mothafunka-connection/
+R|H|Rob Pearson|MURM006|Murmurations (MURM006)||£13.34|Preorder · 5 Dec|https://www.redeyerecords.co.uk/vinyl/202832-murm006-rob-pearson-murm006/
+R|H|Robot 84 / Ali Renault / Craig Bratley / Secret Soul Society|MW 019|Magic Wand (MW-019)||£12.87|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/191887-mw-019-robot-84-ali-renault-craig-bratley-secret-soul-society-mw-019/
+R|H|Rowan|Dream Travel EP|Magic Water Records (MWR-003)|Vinyl (EP)|£13.15|In stock|https://www.redeyerecords.co.uk/vinyl/187274-mwr-003-rowan-dream-travel-ep/
+R|H|RQZ|Street Fighter EP|Memoria Recordings (MEM065)||£13.34|Preorder · 5 Dec|https://www.redeyerecords.co.uk/vinyl/202831-mem065-rqz-street-fighter-ep/
+R|H|Rui Da Silva Feat. Cassandra|Touch Me|Groovin Recordings (GR-12100BT)||£11.96|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/202876-gr-12100bt-rui-da-silva-feat-cassandra-touch-me/
+R|H|Runex|Street Bomb / Electric Bottle|Dusty Donuts (DD025)||£15.58|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/202952-dd025-runex-street-bomb-electric-bottle/
+R|H|S.O.N.S|Time Echoes - (One Per Person)|Junction Forest (SHROOM11)||£29.35|Out of stock|https://www.redeyerecords.co.uk/vinyl/197002-shroom11-s-o-n-s-time-echoes-one-per-person/
+R|H|Saison / Fresco Edits / Mainline / Discoplex|PAPV-004|Pleased As Punch (PAPV-004)||£12.09|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/196767-papv-004-saison-fresco-edits-mainline-discoplex/
+R|H|Saison / Piem / Kid Enigma / Matt Gillespie / Scott Diaz / Miss Yankey|NFRV 016|No Fuss (NFRV-016)||£12.09|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/191888-nfrv-016-saison-piem-kid-enigma-matt-gillespie-scott-diaz-miss-yankey-nfrv-016/
+R|H|Sascha Dive|Brothers Yard (Francesco Mami, YokoO RMXS)|Rhythm Cult (RCM025)||£11.79|In stock|https://www.redeyerecords.co.uk/vinyl/184243-rcm025-sascha-dive-brothers-yard-francesco-mami-yokoo-rmxs/
+R|H|Shinichi Atobe|Butterfly Effect (2 X Clear LP)|Demdike Stare (DDS010)|Vinyl (2 x Clear LP)|£24.96|In stock|https://www.redeyerecords.co.uk/vinyl/58297-dds010-shinichi-atobe-butterfly-effect-2-x-clear-lp/
+R|H|Shinichi Atobe|Ongaku 1 - Clear Vinyl|DDS (DDS072)|Vinyl (Clear)|£15.60|In stock|https://www.redeyerecords.co.uk/vinyl/179638-dds072-shinichi-atobe-ongaku-1-clear-vinyl/
+R|H|Shinichi Atobe|Ship-Scope|Demdike Stare (DDS014)||£15.60|In stock|https://www.redeyerecords.co.uk/vinyl/69197-dds014-shinichi-atobe-ship-scope/
+R|H|Shirley Lites|Heat You Up (Melt You Down)|Be With Records (BEWITH028TWELVE)|Vinyl (12")|£21.06|Preorder · 5 Dec|https://www.redeyerecords.co.uk/vinyl/202825-bewith028twelve-shirley-lites-heat-you-up-melt-you-down/
+R|H|Silat Beksi|Sofa King EP (J Gabriel & Connie Yin RMX)|Convent (CONVENT010)||£11.78|Preorder · 18 Dec|https://www.redeyerecords.co.uk/vinyl/202850-convent010-silat-beksi-sofa-king-ep-j-gabriel-and-connie-yin-rmx/
+R|H|Skanna|Until The Night Is Morning (One Per Person)|Skanna (SKANNA004)||£13.26|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/196953-skanna004-skanna-until-the-night-is-morning-one-per-person/
+R|H|Spiller Featuring Sophie Ellis-Bextor|Groovejet (If This Ain't Love) (2 X 12" Gatefold Sleeve With Printed Insert)|Defected (DFTD626)||£21.82|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/144227-dftd626-spiller-featuring-sophie-ellis-bextor-groovejet-if-this-aint-love-2-x-12-gatefold-sleeve-with-printed-insert/
+R|H|Stimulator Jones|Wait For You (Feat. Melody Mundaca)|Bastard Jazz Recordings (BJ744)||£8.75|Preorder · 7 Dec|https://www.redeyerecords.co.uk/vinyl/202930-bj744-stimulator-jones-wait-for-you-feat-melody-mundaca/
+R|H|Tesfa Williams|Club Joy EP|Heist Recordings (HEIST104)||£13.15|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/202921-heist104-tesfa-williams-club-joy-ep/
+R|H|The Brooks|Pain And Bliss|Big In The Garden (BIGV026)||£27.77|Preorder · 18 Dec|https://www.redeyerecords.co.uk/vinyl/202903-bigv026-the-brooks-pain-and-bliss/
+R|H|THE JONES GIRLS|NIGHTS OVER EGYPT|Philadelphia International Records (PIR13A2031AB)||£12.48|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/91619-pir13a2031ab-the-jones-girls-nights-over-egypt/
+R|H|The Night Writers|Let The Music (Use You)|Mint Condition (MC010)||£11.70|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/85577-mc010-the-night-writers-let-the-music-use-you/
+R|H|The Shapeshifters|Lola's Theme|Glitterbox (GLITS092)||£12.48|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/192145-glits092-the-shapeshifters-lolas-theme/
+R|H|The Soundlords, The Inspiring Sound Sauce|REZ39thirtynine|Rezpektiva (REZ39THIRTYNINE)||£13.03|Preorder · 7 Dec|https://www.redeyerecords.co.uk/vinyl/202896-rez39thirtynine-the-soundlords-the-inspiring-sound-sauce-rez39thirtynine/
+R|H|Ti Emile x Jose Marquez x Kiko Navarro|Bele Bump|Canopy (CNPY-019)||£15.61|Preorder · 6 Dec|https://www.redeyerecords.co.uk/vinyl/202884-cnpy-019-ti-emile-x-jose-marquez-x-kiko-navarro-bele-bump/
+R|H|Tino|Super Hot EP|M.a.d Records (MAD019Y)||£14.02|Preorder · 18 Dec|https://www.redeyerecords.co.uk/vinyl/202953-mad019y-tino-super-hot-ep/
+R|H|Unknown|Page Six: Lumen|The Edge Of Me (EDGE06)||£13.27|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/201779-edge06-unknown-page-six-lumen/
+R|H|Unknown Artist|OSS01|Oss (OSS01)||£12.31|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/187426-oss01-unknown-artist/
+R|H|V.A.|Dancefloor Funk 3|Legofunk Records (LGF-S04)||£14.36|Preorder · 3 Dec|https://www.redeyerecords.co.uk/vinyl/202881-lgf-s04-v-a-dancefloor-funk-3/
+R|H|Various Artists|Many Shades Of House (Selected By Lea Lisa) Vol.2 - 2LP|Favorite Recordings (FVR206)|Vinyl (2LP)|£24.08|Preorder · 27 Nov|https://www.redeyerecords.co.uk/vinyl/198936-fvr206-many-shades-of-house-selected-by-lea-lisa-vol-2-various-artists-2lp/
+R|H|Vivian Wang|Golden Hour|Collective Resource Inc. (CR001B)||£11.70|Preorder · 27 Nov|https://www.redeyerecords.co.uk/vinyl/202933-cr001b-vivian-wang-golden-hour/
+R|H|Wanek, Dietmar, Välth, Siili|Nomind 001|Nomind. (NOMIND001)||£15.90|Out of stock|https://www.redeyerecords.co.uk/vinyl/200038-nomind001-wanek-dietmar-v%C3%A4lth-siili-nomind-001/
+R|H|Wiersma|VSR 001|Vermilion Sun Records (VSR001-R)||£15.22|Out of stock|https://www.redeyerecords.co.uk/vinyl/201624-vsr001-r-wiersma-vsr-001/
+R|H|WINX|DON'T LAUGH (RICHIE HAWTIN REMIX)|Sorted Records (SOR24280)||£10.92|Preorder · 4 Dec|https://www.redeyerecords.co.uk/vinyl/91202-sor24280-winx-dont-laugh-richie-hawtin-remix/
+R|H|WZ|Abandoned Roots|Dimeshift (DS004)||£13.26|In stock|https://www.redeyerecords.co.uk/vinyl/202469-ds004-wz-abandoned-roots/
+J|E|808 PRINCE|808 Prince|Apron|LP|£27.50||https://www.juno.co.uk/products/808-prince-vinyl/1178148-01/
+J|E|ALMIGHTY QUAD|In Quad We Trust EP|Battle Trax|12"|£21.99||https://www.juno.co.uk/products/almighty-quad-in-quad-we-trust-ep-vinyl/1188871-01/
+J|E|D'ARCANGELO|Eksel (reissue)|Lapsus Spain|silver vinyl 2xLP + insert with obi strip|£32.50||https://www.juno.co.uk/products/darcangelo-eksel-vinyl/1180378-01/
+J|E|DJ QUEST|Gravel Muncha|Cyberfunk|12"|£17.25||https://www.juno.co.uk/products/dj-quest-gravel-muncha-vinyl/1177863-01/
+J|E|HACKNEY ELECTRONICA|Feedback Memory|Dark Entries US|heavyweight vinyl 12"|£17.50||https://www.juno.co.uk/products/hackney-electronica-feedback-memory-vinyl/1183961-01/
+R|E|Chino|The Chase|Brokntoys (BT87)||£17.92|Out of stock|https://www.redeyerecords.co.uk/vinyl/201932-bt87-chino-the-chase/
+R|E|Ekman|Into The Den [Limited Poster Edition]|Zodiak Commune Records (ZC-ELEC019LTD)||£12.77|Preorder · 13 Nov|https://www.redeyerecords.co.uk/vinyl/195746-zc-elec019ltd-ekman-into-the-den-%5Blimited-poster-edition%5D/
+R|E|Exzakt X Hollow GraphiK X One Way|Torture Netzwerk|Shipwrec (SHIP079)||£13.13|Preorder · 7 Dec|https://www.redeyerecords.co.uk/vinyl/202818-ship079-exzakt-x-hollow-graphik-x-one-way-torture-netzwerk/
+C|E|Budino|Signal EP|Altered Circuits|12"|||https://clone.nl/item84500.html
+C|E|Christian AB|Audiotronix|Clone Store Only Series|12"|||https://clone.nl/item85111.html
+C|E|Dopplereffekt|Infinion Regress|De:tuned|12"|||https://clone.nl/item85364.html
+B|E|Abou Naïm Records 002|Meet some friends EP|||||https://abounaimrecords.bandcamp.com/album/meet-some-friends-ep/
+B|E|BOODAMAN|Residence MAH|||||https://boodaman.bandcamp.com/album/residence-mah/
+B|E|Galaxian|VAMP-seq EP (BRCKT005)|||||https://brockout.bandcamp.com/album/galaxian-vamp-seq-ep-brckt005/
+B|E|Hydro One|Hydro Corridor|||||https://iterationcorp.bandcamp.com/album/hydro-corridor/
+B|E|Interphaze|Six Trax|||||https://kinesthetik.bandcamp.com/album/six-trax/
+B|E|ITR8|Arika Pattern|||||https://iterationrecordingcorporation.bandcamp.com/album/arika-pattern/
+B|E|Nullptr|City Of Tomorrow|||||https://whoispaula.bandcamp.com/album/city-of-tomorrow/
+B|E|Rogue FX|Corporate World|||||https://roguefx.bandcamp.com/album/corporate-world/
+B|E|Sirius A|Eta Aquilae|||||https://iterationrecordingcorporation.bandcamp.com/album/eta-aquilae/
+B|E|Waveform|Cold Plasma|||||https://iterationcorp.bandcamp.com/album/cold-plasma/
+B|E|Young Adults|Mindstretcher EP|||||https://unusualtraxx.bandcamp.com/album/mindstretcher-ep/`;
+const PICKS=[["ATRICE", "Default Settings", "Ilian Tape 2xLP, listed at both Juno (heavyweight vinyl with MP3 code) and Hard Wax."], ["Carl FINLOW", "Reprise", "Panick Panick! Italy 12\" repress at Juno."], ["7CIRCLE", "Fracture EP", "Hand-numbered 180 gram coloured vinyl 12\" limited to 200 copies on Destroy To Rebuild."], ["Backbone", "Not So Punk", "Mutual Rytm MRX-008 10\" at Hard Wax."], ["Alarico", "Klockworks 42", "Klockworks 12\" on Clone's homepage."], ["Sam ALFRED", "No More EP", "Technicolour 12\" in Juno's Deep House tag."], ["Works Of Intent", "Our Resting Hearts", "Time Passages (TP31), in stock at Redeye."]];
 // ===== WEEKLY DATA END =====
 
 
