@@ -65,6 +65,8 @@ h2{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-si
 /* crate grid */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:22px 18px;margin-top:18px}
 .card{display:flex;flex-direction:column;gap:8px;min-width:0}
+.sleeve-link{display:block;color:inherit;text-decoration:none;cursor:pointer;border-radius:2px}
+.sleeve-link:focus-visible{outline:2px solid var(--accent,currentColor);outline-offset:3px}
 .sleeve{position:relative;aspect-ratio:1/1;max-width:100%;overflow:hidden;border-radius:2px}
 .sleeve .disc{position:absolute;top:6%;left:22%;width:88%;aspect-ratio:1/1;border-radius:50%;
   background:radial-gradient(circle,var(--label) 0 17%,var(--disc) 17.5% 19%,transparent 19%),repeating-radial-gradient(circle,var(--disc) 0 2px,var(--groove) 2px 3px);transition:transform .35s ease}
@@ -611,7 +613,7 @@ function alsoAt(r){
 function sleeve(r){
   const cat=r.label.includes("·")?r.label.split("·")[1].trim():GENRE[r.g];
   const lbl=r.label.split("·")[0].trim()||r.artist;
-  return `<div class="sleeve" style="${sleeveStyle(r)}" aria-hidden="true"><div class="disc"></div><div class="cover"><span class="cat">${esc(cat)}</span><span class="lbl">${esc(lbl)}</span></div></div>`;
+  return `<a class="sleeve-link" href="${esc(r.url)}" target="_blank" rel="noopener" aria-label="Listen and buy: ${esc(r.artist)} - ${esc(r.title)} at ${STORE[r.s]} (opens in a new tab)"><div class="sleeve" style="${sleeveStyle(r)}" aria-hidden="true"><div class="disc"></div><div class="cover"><span class="cat">${esc(cat)}</span><span class="lbl">${esc(lbl)}</span></div></div></a>`;
 }
 function card(r,why){
   const on=wants.has(r.id);
